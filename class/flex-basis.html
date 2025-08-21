@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ㄹlex연습</title>
+  <style>
+    /* flex-basis, flex-clow, clex-shrink */
+  .container {
+    width: 800px;
+    display: flex;
+    border: 1px solid #222;
+    gap: 30px;
+  }
+  .box {
+    background-color: #222;
+    flex-basis: 150px;
+  }
+  p {
+    color: aliceblue;
+    text-align: center;
+    font-size: 2rem;
+  }
+  #box1{flex-grow: 1;}
+  #box2{flex-grow: 0;}
+  #box3{flex-grow: 3;}
+  #box4{flex-grow: 1;}
+
+
+ #container3 .box{flex-basis: 300px;}
+
+  #box5{flex-shrink: 1;}
+  #box62{flex-shrink: 0;}
+  #box7{flex-shrink: 3;}
+  #box8{flex-shrink: 1;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"><p>dkdk</p></div>
+    <div class="box"><p>dkdk</p></div>
+    <div class="box"><p>dkdk</p></div>
+  </div>
+  <div class="container">
+    <div class="box" id="box1"><p>dkdk</p></div>
+    <div class="box" id="box2"><p>dkdk</p></div>
+    <div class="box" id="box3"><p>dkdk</p></div>
+    <div class="box" id="box4"><p>dkdk</p></div>
+  </div>
+  <div class="container" id="container3">
+    <div class="box" id="box5"><p>dkdk</p></div>
+    <div class="box" id="box6"><p>dkdk</p></div>
+    <div class="box" id="box7"><p>dkdk</p></div>
+    <div class="box" id="box8"><p>dkdk</p></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+header {
+  box-sizing: border-box;
+  position: sticky;
+  display: flex;
+  top: 0;
+  width: 100%;
+  height: 120px;
+  background-color: rgb(255, 254, 220);
+  padding-top: 15px;
+  transition: all 0.3s ease;
+}
+
+header img {
+  height: 96px;
+  width: auto;
+  display: block;
+  margin-left: 20px;
+}
+.menu {
+  box-sizing: border-box;
+  line-height: 40px;
+  font-size: 40px;
+  padding: 25px;
+}
+nav {
+  display: flex;
+  margin-left: 20%;
+}
+
+nav>ul {
+  box-sizing: border-box;
+  display: flex;
+  height: 120px;
+  overflow: hidden;
+  text-align: center;
+ 
+}
+ .detail {
+  margin-top: 30px;
+  font-size: 25px;
+  line-height: 70px;
+  padding: 15px 30px;
+ }
+
+.detail>a {
+  transition: all 0.1s ease;
+  display: block;
+}
+
+ /*--------------- 호버모음 ---------------*/
+header:hover{
+  height: 400px;
+}
+header:hover nav>ul {
+  height: auto;
+}
+.menu:hover {
+  background-color: rgb(226, 202, 165);
+  color: aliceblue;
+}
+.detail>a:hover  {
+  color: rgb(199, 136, 64);
+  transform: scale(1.1);
+}
