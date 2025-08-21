@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+  <style>
+    a {
+      text-decoration: none;
+      color: rgb(7, 23, 37);
+    }
+    .container {
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 50px;
+      display: flex;
+      width: 1500px;
+      height: 700px;
+      background: linear-gradient(40deg, rgba(0, 0, 255, 0.7), rgba(0, 0, 0, 0.7), rgba(255, 0, 0, 0.7));
+      background-color: rgb(60, 60, 60);
+      overflow: hidden;
+    }
+
+    .box {
+      box-sizing: border-box;
+      position: absolute;
+      display: flex;
+      width: 180px;
+      height: 80px;
+      border: 1px solid whitesmoke;
+      border-radius: 3px;
+      background-color: aliceblue;
+      padding: 15px;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>hello, world!</h1>
+  <div class="container">
+    <div class="box" id="box1"><a href="class/index.html">수업 바로가기</a></div>
+    <div class="box" id="box2"><a href="mer/index.html">주은 바로가기</a></div>
+    <div class="box" id="box3"><a href="portfolio/index.html">포트폴리오 바로가기</a></div>
+  </div>
+
+
+  <script>
+    const box=document.querySelectorAll(".box");
+    const container=document.querySelector(".container")
+
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    box.forEach(box => {
+      const randomX = Math.random() * (containerWidth - box.clientWidth)
+      const randomY = Math.random() * (containerHeight - box.clientHeight)
+      
+
+    box.style.left = randomX + "px";
+    box.style.top = randomY + "px";
+    });
+    
+
+  </script>
+</body>
+
+</html>
