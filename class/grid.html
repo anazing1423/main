@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그리드</title>
+  <style>
+    /* .total {
+      display: flex;
+    } */
+    /* minmax(최소, 최대) */
+    /* fr 단위: 프렉션...<- %같은거라 한도없이늘어나고줄어들수있는..?듯  */
+    /* 그리드 안에 박스가 여러개있다면 박스 순서대로 그냥 minmax(c최소, 최대) minmax(c최소, 최대) minmax(c최소, 최대) 일케넣어주면댐*/
+
+    #container1 {
+      display: grid;
+      grid-template-columns: 100px 200px 300px;
+      grid-template-rows: 50px 100px;
+    }
+
+    #container2 {
+      display: grid;
+      grid-template-columns: 100px 200px 300px;
+      grid-template-rows: 50px 100px;
+    }
+
+    #container3 {
+      width: 600px;
+      border: 1px solid #555;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: minmax(100px, 300px);
+    }
+
+    #container4 {
+      width: 800px;
+      border: 1px solid #555;
+      background-color: red;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    #container5 {
+      width: 800px;
+      border: 1px solid #555;
+      background-color: rgb(25, 0, 255);
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      margin-bottom: 20px;
+    }
+
+    /* .items {
+      border: 1px solid #222;
+      padding: 10px;
+    } */
+
+    /* 그리드라인-넘버링 해서 박스 영역 설정하는 방법이란, 템플릿 어쩌구 사용하는 방법있는데 템플릿을 더 많이 씀  */
+    #container6 {
+      color: rgb(11, 0, 71);
+      text-align: center;
+      gap: 10px;
+      width: 700px;
+      display: grid;
+      grid-template-rows: repeat(3, 100px);
+      /*100px 3번 반복*/
+      /* 원하는 위치대로 grid area 이름 설정햇던것 배치 */
+      /* ㄱ자 모양은 안댐..ㅠㅠ */
+      grid-template-areas:
+        "b1 b1 b1"
+        "b2 b3 b3"
+        "b2 b4 b4";
+    }
+
+    #box1 {
+      background-color: aliceblue;
+      grid-area: b1;
+    }
+
+    #box2 {
+      background-color: rgb(187, 223, 255);
+      grid-area: b2;
+    }
+
+    #box3 {
+      background-color: rgb(86, 176, 255);
+      grid-area: b3;
+    }
+
+    #box4 {
+      background-color: rgb(0, 136, 255);
+      grid-area: b4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="total">
+    <div class="container" id="container1">
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">6</div>
+    </div>
+    <div class="container" id="container2">
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+    </div>
+    <div class="container" id="container3">
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+    </div>
+    <div class="container" id="container4">
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+    </div>
+    <div class="container" id="container5">
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+      <div class="items">1</div>
+    </div>
+    <div class="container" id="container6">
+      <div class="items" id="box1">1</div>
+      <div class="items" id="box2">2</div>
+      <div class="items" id="box3">3</div>
+      <div class="items" id="box4">4</div>
+    </div>
+  </div>
+</body>
+
+</html>

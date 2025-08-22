@@ -1,0 +1,142 @@
+video {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  position: fixed;
+  top: 45px;
+  left: 50px;
+  z-index: 10;
+}
+
+h1 img {
+  width: 200px;
+  height: auto;
+}
+
+/* 대각선 섹션 전체 */
+header {
+  width: 700px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -535px;
+  background: linear-gradient(45deg, rgb(0, 0, 46)5%, rgb(51, 51, 228)32%, rgb(145, 224, 255)55%, aquamarine, rgb(255, 254, 204)99%);
+  transform: skewX(-25deg);
+  transform-origin: bottom left;
+}
+
+/* 메뉴 큰틀 */
+.menu1 {
+  width: 250px;
+  position: absolute;
+  /*포지션 기준이 헤더로 되게*/
+  top: 150px;
+  right: -50px;
+  /* background-color: rgb(204, 204, 204); 눈에 보이게  */
+}
+
+/* 메뉴 */
+.menu1>li {
+  position: relative;
+  /*얘가 자식 속의 부모*/
+}
+
+/* 메뉴 소타이틀 */
+.menu1>li>a {
+  display: block;
+  box-sizing: border-box;
+  width: 250px;
+  height: 50px;
+  font: bold 20px/3 play;
+  background-color: rgb(217, 255, 0);
+  color: rgb(5, 15, 24);
+  padding-right: 40px;
+  text-align: right;
+  line-height: 50px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+/* 맨 위 메뉴만 색 다르게 */
+.menu1>.on>a {
+  background-color: #232323;
+  color: rgb(246, 251, 255);
+}
+
+.menu1>li:hover>a {
+  background-color: #232323;
+  color: rgb(246, 251, 255);
+}
+
+/* 글자 정상화 */
+.menu1 em {
+  display: inline-block;
+  transform: skewX(25deg) !important;
+}
+
+/* 아이콘 살짝 띄우기 */
+.menu1 em i {
+  margin-right: 20px;
+}
+
+/* 소메뉴*/
+/* 소메뉴 첨엔 가려지게 */
+.menu1 ul {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateX(0);
+  transition: transform 0.5s ease, color 0.1s ease;
+}
+
+/* 등장 */
+.menu1>li:hover ul {
+  opacity: 0.8;
+  transform: translateX(135px);
+}
+
+.menu1>ul:not(:hover) {
+  opacity: 0;
+}
+
+/* menu1 ul a로 하고 a에 블럭을 먹여주면 li에 없는 a도 적용, 백그라운드 크기대로 적용*/
+.menu1 ul a {
+  display: block;
+  box-sizing: border-box;
+  width: 150px;
+  height: 40px;
+  background-color: #232323;
+  border-right: 8px solid salmon;
+  font: bold 16px/2.5 arial;
+  color: aliceblue;
+  padding-left: 30px;
+  margin-bottom: 4px;
+  transition: all 0.3s ease;
+  background-color: aquamarine;
+  color: #232323;
+  scale: 1.02;
+}
+
+.menu1 ul:hover a:not(:hover) {
+  background-color: rgba(2, 37, 26, 0.877);
+  scale: 0.95;
+}
+
+
+@media (min-aspect-ratio:16/9) {
+  .video-foreground {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio:16/9) {
+  .video-foreground {
+    height: 300%;
+    left: -100%;
+  }
+}
