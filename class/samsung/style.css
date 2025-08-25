@@ -23,18 +23,45 @@ h1 img {
 
 /* 대각선 섹션 전체 */
 header {
-  width: 650px;
-  height: 100%;
   position: fixed;
+  width: 650px;
+  height: 1080px;
   top: 0;
-  left: -535px;
-  background: linear-gradient(45deg, rgb(51, 51, 228)20%,
-      /*rgb(130, 0, 182)8%,*/
-      rgb(145, 224, 255)65%, aquamarine 76%, rgb(255, 254, 204)99%);
+  /* left: -250px; */
+  left: -435px;
   transform: skewX(-25deg) translateX(0);
   transform-origin: bottom left;
   transition: all 0.3s ease-in-out;
+  background:
+  linear-gradient(45deg, rgb(51, 51, 228)20%,
+      /*rgb(130, 0, 182)8%,*/
+      rgb(145, 224, 255)65%, aquamarine 76%, rgb(255, 254, 204)99%);
 }
+
+header::before {
+  content:"";
+  position: absolute;
+  inset:0;
+z-index: -1;
+
+  /* 45deg 배경 + 오른쪽으로 투명 페이드 */
+  background:
+    linear-gradient(
+      45deg,
+      rgb(51,51,228) 20%,
+      rgb(145,224,255) 65%,
+      /* aquamarine 76%, */
+      rgb(255,254,204) 99%
+    );
+
+      -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  mask-image: linear-gradient(to right, black 80%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+
 
 /* 메뉴 큰틀 */
 .menu1 {
@@ -42,7 +69,7 @@ header {
   position: absolute;
   /*포지션 기준이 헤더로 되게*/
   top: 160px;
-  right: 0px;
+  right: 80px;
 
 }
 
@@ -139,6 +166,7 @@ header {
   width: 80px;
   top: 120px;
   left: 30px;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
 }
 
 .media li a {
