@@ -24,12 +24,23 @@
 
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
     body {
       background: #eee;
     }
 
 
     /* 슬라이더 css */
+.slider-container {
+  width: 1440px !important;
+  height: 589px !important;
+  padding: 0;
+  margin: 0;
+}
+
     .slider-pc {
       display: block !important;
     }
@@ -94,6 +105,10 @@
     }
 
     /* 이달의 픽 */
+    #pick {
+       display: grid;
+  place-items: center; 
+    }
     .row {
       display: flex;
       width: 1120px;
