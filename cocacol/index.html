@@ -30,9 +30,21 @@
     }
     body{background: #eeeeee;}
 
-    #collapsibleNavbar .dropdown-toggle:hover+.dropdown-menu {
+    #collapsibleNavbar .nav-item:hover .dropdown-menu {
       display: block;
     }
+
+    #collapsibleNavbar .nav-item .dropdown-toggle::after{
+      border:0 !important; 
+    }
+    
+    #collapsibleNavbar .nav-item:hover i{
+     animation: ani01 0.5s ease-in-out forwards !important;
+    }
+@keyframes ani01 {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(90deg);}
+}
 
 
     .slider-pc{display: block !important;}  
@@ -200,7 +212,7 @@
   <!-- navigation ------------------------------------------------------------------------------------->
   <nav class="navbar navbar-expand-sm">
     <div class="container">
-      <a class="navbar-brand" href="#"><img src="img/" alt="coca-cola logo"></a>
+      <a class="navbar-brand" href="#"><img src="img/Coke-company-logo-black.svg" alt="coca-cola logo"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -210,14 +222,14 @@
             <a class="nav-link" href="#">Brands</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Company</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button">Our Company <i class="fa-solid fa-chevron-right"></i></a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Coca-Cola Company</a></li>
               <li><a class="dropdown-item" href="#">Since 1886</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Discover</a>
+            <a class="nav-link dropdown-toggle" href="#" role="button">Discover</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Brand Story</a></li>
               <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
@@ -233,6 +245,7 @@
         </ul>
       </div>
     </div>
+    
   </nav>
   <!-- /navigation -->
    
