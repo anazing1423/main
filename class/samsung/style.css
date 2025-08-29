@@ -3,7 +3,18 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* 마스크 적용: 중앙 투명, 가장자리 살짝 어둡게 */
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 2) 70%, rgba(0, 0, 0, 0.0) 150%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: cover;
+
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 2) 70%, rgba(0, 0, 0, 0.0) 150%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
 }
+
 
 h1 {
   position: fixed;
@@ -19,41 +30,44 @@ h1 img {
   height: auto;
   transform: translate(0) scale(1);
   transition: all 0.3s ease-in-out;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
 }
 
 /* 대각선 섹션 전체 */
 header {
-  
+
   position: relative;
   width: 600px;
   height: 1080px;
   top: 0;
-  /* left: -250px; */
-  left: -350px;
+  left: -250px;
+  /* left: -350px; */
   transform: skewX(-10deg) translateX(0);
-  transform-origin: bottom left;
+
   transition: all 0.3s ease-in-out;
 }
+
 header::before {
   content: "";
   position: absolute;
   inset: 0;
-
+  transform-origin: bottom left;
   /* 배경 그라데이션 */
-  background:linear-gradient(45deg, rgb(51, 51, 228)20%,
-      
+  background: linear-gradient(45deg, rgb(51, 51, 228)20%,
+
       rgb(145, 224, 255)65%, aquamarine 76%, rgb(255, 254, 204)99%);
 
   /* 마스크: 왼쪽→오른쪽 투명도 */
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)0%,rgba(0,0,0,1)43%, rgba(0,0,0,0)100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1)30%, rgba(0, 0, 0, 0)100%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
 
-  mask-image: linear-gradient(to right, rgba(0,0,0,1)0%,rgba(0,0,0,1)43%, rgba(0,0,0,0)100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1)30%, rgba(0, 0, 0, 0)100%);
   mask-repeat: no-repeat;
   mask-size: cover;
 
-  z-index: -1; /* 텍스트 뒤로 */
+  z-index: -1;
+  /* 텍스트 뒤로 */
 }
 
 
@@ -65,9 +79,10 @@ header::before {
   width: 250px;
   position: absolute;
   /*포지션 기준이 헤더로 되게*/
-  top: 160px;
-  right: 60px;
-
+  top: 170px;
+  right: 80px;
+  margin-top: 20px;
+  transform: skewX(10deg) !important;
 }
 
 /* 메뉴 */
@@ -85,7 +100,7 @@ header::before {
   font: bold 23px/3 play;
   color: rgb(5, 15, 24);
   padding-right: 40px;
-  text-align: right;
+  text-align: left;
   line-height: 50px;
   padding-bottom: 10px;
   margin-bottom: 5px;
@@ -95,13 +110,14 @@ header::before {
 .menu1>li:hover>a {
   color: rgb(219, 255, 61);
   text-shadow: 0 1px 1px #403d6160;
-  transform: scale(1.2);
+  transform: scale(1.02);
+  /* transform-origin: 55%; */
 }
 
 /* 글자 정상화 */
 .menu1 em {
   display: inline-block;
-  transform: skewX(25deg) !important;
+  /* transform: skewX(25deg) !important; */
 }
 
 /* 아이콘 살짝 띄우기 */
@@ -153,8 +169,9 @@ header::before {
   background-color: rgba(2, 37, 26, 0.877);
   transform: scale(0.95);
 }
+
 .decobox {
-height: auto;
+  height: auto;
   position: absolute;
   display: flex;
   box-sizing: border-box;
@@ -162,61 +179,64 @@ height: auto;
   right: -135px;
   gap: 50px;
   transform: scaleY(1.3) skewX(-28deg);
- 
-  
+
+
   /* 마스크: 왼쪽→오른쪽 투명도 */
-  -webkit-mask-image: linear-gradient(20deg, rgba(0,0,0,1)05%, rgba(0,0,0,0)57%);
+  -webkit-mask-image: linear-gradient(20deg, rgba(0, 0, 0, 1)05%, rgba(0, 0, 0, 0)57%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
-  
-  mask-image: linear-gradient(20deg, rgba(0,0,0,1)05%, rgba(0,0,0,0)57%);
+
+  mask-image: linear-gradient(20deg, rgba(0, 0, 0, 1)05%, rgba(0, 0, 0, 0)57%);
   mask-repeat: no-repeat;
   mask-size: cover;
 
 }
+
 .decobox .deco {
   margin: 0;
   width: 40px;
   height: 350px;
-  background-color: rgba(255, 254, 204, 0.404);}
+  background-color: rgba(255, 254, 204, 0.404);
+}
 
 
 .decobox #f {
   transform: scaleX(20) !important;
   transform-origin: bottom;
 
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)50%, rgba(0,0,0,0)100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1)50%, rgba(0, 0, 0, 0)100%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
-  
-  mask-image: linear-gradient(to right, rgba(0,0,0,1)50%, rgba(0,0,0,0)100%);
+
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1)50%, rgba(0, 0, 0, 0)100%);
   mask-repeat: no-repeat;
   mask-size: cover;
-    
+
 }
 
 .decobox #ff {
-  width:200px !important;
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)0%, rgba(0,0,0,0)80%);
+  width: 200px !important;
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0)80%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
-  
-  mask-image: linear-gradient(to right, rgba(0,0,0,1)0%, rgba(0,0,0,0)80%);
+
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 0)80%);
   mask-repeat: no-repeat;
   mask-size: cover;
 }
-  /* 모바일일때나올 메뉴 */
-  .media {
-    opacity: 0;
-    pointer-events: none;
-    font: bold 18px/3 play;
-    position: fixed;
-    width: 80px;
-    top: 120px;
-    left: 30px;
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
-  }
-  
+
+/* 모바일일때나올 메뉴 */
+.media {
+  opacity: 0;
+  pointer-events: none;
+  font: bold 18px/3 play;
+  position: fixed;
+  width: 80px;
+  top: 120px;
+  left: 30px;
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+}
+
 .media li a {
   box-sizing: border-box;
   text-align: left;
@@ -235,6 +255,8 @@ height: auto;
   top: 45px;
   right: 50px;
   gap: 20px;
+  z-index: 723;
+
 }
 
 .icon a {
@@ -244,14 +266,16 @@ height: auto;
   opacity: 0.7;
   color: rgb(238, 255, 0);
   transition: all 0.3s ease;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
 }
 
 .icon a:hover {
-  transform: scale(1.2) ;
+  transform: scale(1.2);
   opacity: 1;
 }
 
 .decora {
+  z-index: 23;
   width: 300px;
   height: 100px;
   position: fixed;
@@ -264,14 +288,179 @@ height: auto;
 .txt {
   margin: 0;
   position: absolute;
-	font-size: 40px;
-	font-family: play;
+  font-size: 40px;
+  font-family: play;
 }
+
 .txt b {
-	font: bold 45px arial;
-	color: #b9fb05;
-	margin-left: 20px;
+  font: bold 45px arial;
+  color: #b9fb05;
+  margin-left: 20px;
 }
+
+
+
+
+
+
+
+
+/* contents 레이아웃 */
+#side {
+  width: 500px;
+  height: 1000px;
+  position: fixed;
+  bottom: 0px;
+  right: -200px;
+  background: linear-gradient(to left, rgb(127, 255, 212)3%, rgba(127, 255, 212, 0))100%;
+  opacity: 0.8;
+  transition: all 0.5s;
+}
+
+
+#side:hover {
+  opacity: 1;
+  background: rgb(0, 0, 0, 0.8);
+  right: 0px;
+  z-index: 523;
+}
+
+
+#side .con {
+  display: none;
+  box-sizing: border-box;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  height: 1000px;
+  width: 500px;
+  transition: all 1s;
+  opacity: 0.8;
+  padding: 0;
+  margin: 0;
+}
+#side:hover .con {
+  display: block;
+}
+
+#side .con ul {
+  list-style: none;
+  position: absolute;
+  width: 400px;
+  left: 20px;
+  margin: 80px 50px;
+}
+
+#side .con ul li {
+  background-color: #b9fb05;
+  height: 200px;
+  margin:60px 0;
+
+}
+
+/* contents내 썸네일 */
+
+
+#side .con p em {
+  display: inline-block;
+  font: bold 28px/1.7 arial;
+  color: #ffffff;
+}
+
+#side .con p img {
+  width: 300px;
+  height: 70px;
+  opacity: 0.3;
+  transition: all 0.5s;
+}
+
+#side .con p img:hover {
+  opacity: 1;
+}
+
+#side .con p:nth-child(1) {
+  bottom: 270px;
+  transition: all 0.4s;
+}
+
+#side .con p:nth-child(2) {
+  bottom: 160px;
+  transition: all 0.8s;
+}
+
+#side .con p:nth-child(3) {
+  bottom: 50px;
+  transition: all 1.2s;
+}
+
+#side:hover .con p {
+  transform: translateX(0px);
+}
+
+/* 자동롤링 버튼*/
+#side .btnContents {
+  z-index: 723;
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  bottom: 40px;
+  left: 100px;
+  color: #f1ffc9;
+}
+
+#side:hover .btnContents {
+  display: none;
+}
+
+.btnContents i {
+  font-size: 60px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  opacity: 1;
+}
+
+.btnContents i:nth-child(1) {
+  animation: ani linear 1.8s 0s infinite;
+}
+
+.btnContents i:nth-child(2) {
+  animation: ani linear 1.8s 0.6s infinite;
+}
+
+.btnContents i:nth-child(3) {
+  animation: ani linear 1.8s 1.2s infinite;
+}
+
+@keyframes ani {
+  0% {
+    right: 0px;
+    transform: sclae(1.5);
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  100% {
+    right: 80px;
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -315,7 +504,7 @@ height: auto;
 
   .media li a:hover {
     text-decoration: underline;
-    transform: scale(1.2) ;
+    transform: scale(1.2);
     transform-origin: left;
     background: #4058b85e;
     /* color: aliceblue; */
