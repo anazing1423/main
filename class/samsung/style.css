@@ -161,7 +161,7 @@ header .decobox {
   display: flex;
   box-sizing: border-box;
   bottom: 20px;
-  right: -105px;
+  right: -165px;
   gap: 50px;
   transform:  skewX(-28deg);
   /* 마스크: 왼쪽→오른쪽 투명도 */
@@ -179,7 +179,13 @@ header .decobox {
   height: 350px;
   background-color: rgba(255, 254, 204, 0.212);
 }
-
+.decobox #f {
+  transform: scaley(3) !important;
+  transform-origin: bottom;
+}
+.decobox #ff {
+  width: 130px !important;
+}
   /* 모바일일때나올 메뉴 */
   .media {
     opacity: 0;
