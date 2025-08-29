@@ -23,6 +23,7 @@ h1 img {
 
 /* 대각선 섹션 전체 */
 header {
+  
   position: relative;
   width: 600px;
   height: 1080px;
@@ -152,39 +153,57 @@ header::before {
   background-color: rgba(2, 37, 26, 0.877);
   transform: scale(0.95);
 }
-header .decobox {
-  overflow: hidden;
-}
 .decobox {
-
+height: auto;
   position: absolute;
   display: flex;
   box-sizing: border-box;
   bottom: 20px;
-  right: -165px;
+  right: -225px;
   gap: 50px;
   transform:  skewX(-28deg);
+ 
+  
   /* 마스크: 왼쪽→오른쪽 투명도 */
-  -webkit-mask-image: linear-gradient(30deg, rgba(0,0,0,1)0%, rgba(0,0,0,1)30%, rgba(0,0,0,0)65%);
+  -webkit-mask-image: linear-gradient(20deg, rgba(0,0,0,1)05%, rgba(0,0,0,0)57%);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
   
-  mask-image: linear-gradient(30deg, rgba(0,0,0,1)0%, rgba(0,0,0,1)30%, rgba(0,0,0,0)65%);
+  mask-image: linear-gradient(20deg, rgba(0,0,0,1)05%, rgba(0,0,0,0)57%);
   mask-repeat: no-repeat;
   mask-size: cover;
+
 }
 .decobox .deco {
   margin: 0;
   width: 40px;
   height: 350px;
-  background-color: rgba(255, 254, 204, 0.212);
-}
+  background-color: rgba(255, 254, 204, 0.404);}
+
+
 .decobox #f {
-  transform: scaley(3) !important;
+  transform: scaleX(20) !important;
   transform-origin: bottom;
+
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)50%, rgba(0,0,0,0)100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  
+  mask-image: linear-gradient(to right, rgba(0,0,0,1)50%, rgba(0,0,0,0)100%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+    
 }
+
 .decobox #ff {
-  width: 130px !important;
+  width:200px !important;
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)0%, rgba(0,0,0,0)80%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  
+  mask-image: linear-gradient(to right, rgba(0,0,0,1)0%, rgba(0,0,0,0)80%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
 }
   /* 모바일일때나올 메뉴 */
   .media {
