@@ -32,19 +32,7 @@ header {
   transform: skewX(-10deg) translateX(0);
   transform-origin: bottom left;
   transition: all 0.3s ease-in-out;
-  /* background:
-  linear-gradient(45deg, rgb(51, 51, 228)20%,
-      
-      rgb(145, 224, 255)65%, aquamarine 76%, rgb(255, 254, 204)99%);
-      z-index: 0;
-      -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-
-  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
-  mask-repeat: no-repeat;
-  mask-size: cover;  */
-    }/*rgb(130, 0, 182)8%,*/
+}
 header::before {
   content: "";
   position: absolute;
@@ -56,11 +44,11 @@ header::before {
       rgb(145, 224, 255)65%, aquamarine 76%, rgb(255, 254, 204)99%);
 
   /* 마스크: 왼쪽→오른쪽 투명도 */
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)0%,rgba(0,0,0,1)90%, rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1)0%,rgba(0,0,0,1)30%, rgba(0,0,0,0));
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
 
-  mask-image: linear-gradient(to right, rgba(0,0,0,1)0%,rgba(0,0,0,1)90%, rgba(0,0,0,0));
+  mask-image: linear-gradient(to right, rgba(0,0,0,1)0%,rgba(0,0,0,1)30%, rgba(0,0,0,0));
   mask-repeat: no-repeat;
   mask-size: cover;
 
@@ -164,19 +152,46 @@ header::before {
   background-color: rgba(2, 37, 26, 0.877);
   transform: scale(0.95);
 }
+header .decobox {
+  overflow: hidden;
+}
+.decobox {
 
-/* 모바일일때나올 메뉴 */
-.media {
-  opacity: 0;
-  pointer-events: none;
-  font: bold 18px/3 play;
-  position: fixed;
-  width: 80px;
-  top: 120px;
-  left: 30px;
-  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  bottom: 20px;
+  right: -105px;
+  gap: 50px;
+  transform:  skewX(-28deg);
+  /* 마스크: 왼쪽→오른쪽 투명도 */
+  -webkit-mask-image: linear-gradient(30deg, rgba(0,0,0,1)0%, rgba(0,0,0,1)30%, rgba(0,0,0,0)65%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: cover;
+  
+  mask-image: linear-gradient(30deg, rgba(0,0,0,1)0%, rgba(0,0,0,1)30%, rgba(0,0,0,0)65%);
+  mask-repeat: no-repeat;
+  mask-size: cover;
+}
+.decobox .deco {
+  margin: 0;
+  width: 40px;
+  height: 350px;
+  background-color: rgba(255, 254, 204, 0.212);
 }
 
+  /* 모바일일때나올 메뉴 */
+  .media {
+    opacity: 0;
+    pointer-events: none;
+    font: bold 18px/3 play;
+    position: fixed;
+    width: 80px;
+    top: 120px;
+    left: 30px;
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  }
+  
 .media li a {
   box-sizing: border-box;
   text-align: left;

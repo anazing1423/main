@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>한국 코카-콜라</title>
   <link rel="icon" href="img/favicon.png">
-  
+
   <!-- bootstrap ----------------------------------------------------------------------------------------->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,19 +14,23 @@
 
   <!-- slick slider ---------------------------------------------------------------------------------------->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   <!-- /slick slider -->
 
   <!-- fontawesom ------------------------------------------------------------------------------------------------------->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    .container{
+    .container {
       padding: 0 5%;
     }
-    .navbar{
+
+    .navbar {
       background: white;
       padding: 0 !important;
       margin: 0 !important;
@@ -33,181 +38,203 @@
     }
 
     /* 모바일용 서브메뉴가 안보이게 */
-    #collapsibleNavbar-m{ opacity: 0 !important;}
-    
-    
-    body{background: #eeeeee;}
-    
+    #collapsibleNavbar-m {
+      opacity: 0 !important;
+    }
+
+
+    body {
+      background: #eeeeee;
+    }
+
     #collapsibleNavbar .nav-item:hover .dropdown-menu {
       display: block;
     }
-    
-    #collapsibleNavbar .nav-item .dropdown-toggle::after{
-      border:0 !important; 
+
+    #collapsibleNavbar .nav-item .dropdown-toggle::after {
+      border: 0 !important;
     }
-    #collapsibleNavbar .nav-item:hover i{
+
+    #collapsibleNavbar .nav-item:hover i {
       animation: ani01 0.5s ease-in-out forwards !important;
-      
+
       /* animation-name: ani01; */
       /* animation-duration: 0.5s; */
       /* animation-timing-function: ease-in-out; */
-      
+
       /* 애니메이션 종료후 마지막 상태(last frame) 유지. 원래 상태로 돌아가지 않음. */
       /* animation-fill-mode: forwards;   */
-      
+
     }
-    
+
     @keyframes ani01 {
-      0%{transform: rotate(0deg);}
-      100%{transform: rotate(90deg);}
-      
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(90deg);
+      }
+
     }
-    
-    
-    .slider-pc{display: block !important;}  
-    .slider-m{display: none !important;}  
-    
-    .slider-container { 
+
+
+    .slider-pc {
+      display: block !important;
+    }
+
+    .slider-m {
+      display: none !important;
+    }
+
+    .slider-container {
       max-width: 1500px;
       height: 570px !important;
       margin: 50px auto;
     }
-    
-    .slide{
-      position: relative; /* 부모의 position 설정 */
+
+    .slide {
+      position: relative;
+      /* 부모의 position 설정 */
     }
-    
-    .slide .caption, 
-    .slide .more{
-      position: absolute; /* 자식 position:absolute 설정. grouping */
+
+    .slide .caption,
+    .slide .more {
+      position: absolute;
+      /* 자식 position:absolute 설정. grouping */
     }
-    .slide .caption{
+
+    .slide .caption {
       left: 5px;
-      top:200px;
+      top: 200px;
     }
-    .slide .more{
+
+    .slide .more {
       left: 5px;
-      top:300px;
+      top: 300px;
     }
-    
+
     .slider .slide {
-      margin: 0 10px; /* 슬라이드 간 간격 */
+      margin: 0 10px;
+      /* 슬라이드 간 간격 */
     }
-    
+
     .slider .slide img {
       width: 100%;
       height: 570px;
       border-radius: 10px;
     }
-    
-    .slider .slide .btn{
+
+    .slider .slide .btn {
       background-color: white;
       color: black;
       font-weight: bold;
       padding-left: 50px;
       padding-right: 50px;
-      border:none;
+      border: none;
       border-radius: 50px;
     }
-    
-    .thumbnail{
+
+    .thumbnail {
       border-radius: 10px !important;
       background: white;
     }
-    .thumbnail img{
+
+    .thumbnail img {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       width: 100%;
       height: 300px;
     }
-    
+
     #story .col-md-6 img,
-    #tomorrow .col-md-6 img{
-      width:100%;
+    #tomorrow .col-md-6 img {
+      width: 100%;
       height: 100%;
     }
-    
-    .container{
+
+    .container {
       padding-top: 50px;
-      padding-bottom: 50px;      
+      padding-bottom: 50px;
     }
-    
-    #story{
+
+    #story {
       background: blue;
       /* position: relative; */
     }
-    
+
     #story .col-md-6,
-    #tomorrow .col-md-6
-    {
+    #tomorrow .col-md-6 {
       border-radius: 10px !important;
       background: white;
-      height:500px !important;
-      
+      height: 500px !important;
+
     }
+
     #story .col-md-6 img,
-    #tomorrow .col-md-6 img
-    {
+    #tomorrow .col-md-6 img {
       border-radius: 10px;
     }
-    
+
     #tomorrow .row,
-    #story .row{
+    #story .row {
       display: flex !important;
       align-items: center !important;
       background: green;
       height: 600px !important;
-      
+
     }
 
-    #tomorrow  .col-md-6:nth-child(1),
-    #story .col-md-6:nth-child(2){
-      align-self: flex-start !important;     
-    }
     #tomorrow .col-md-6:nth-child(1),
-    #story .col-md-6:nth-child(2){
-      align-self:flex-end !important;
+    #story .col-md-6:nth-child(2) {
+      align-self: flex-start !important;
     }
-    
+
     #tomorrow .col-md-6:nth-child(1),
-    #story .col-md-6:nth-child(1){
-      margin-right: -100px !important; /* 왼쪽박스를 기준으로 오른쪽박스를 왼쪽으로 이동해서 겹치게 */
+    #story .col-md-6:nth-child(2) {
+      align-self: flex-end !important;
     }
-    
-    #story .col-md-6:nth-child(1){
+
+    #tomorrow .col-md-6:nth-child(1),
+    #story .col-md-6:nth-child(1) {
+      margin-right: -100px !important;
+      /* 왼쪽박스를 기준으로 오른쪽박스를 왼쪽으로 이동해서 겹치게 */
+    }
+
+    #story .col-md-6:nth-child(1) {
       z-index: 999;
     }
 
     /* brand ***********************************************************************************/
-    #brand .col-md-4{
+    #brand .col-md-4 {
       background: white;
       box-sizing: border-box;
       margin: 10px;
       transition: 0.5s;
-      width:230px;
+      width: 230px;
       height: 230px;
       border-radius: 10px !important;
 
     }
-    
-    #brand .col-md-4 img{
-      width: 100%;  
+
+    #brand .col-md-4 img {
+      width: 100%;
     }
 
-    #brand .col-md-4:hover{
+    #brand .col-md-4:hover {
       transform: scale(1.05);
     }
 
-    footer.container-fluid{
+    footer.container-fluid {
       background: black;
-    } 
+    }
 
-    
-    /* mobile **********************************************************************************************************************************************/  
-    
-  @media screen and (max-width:767px) {
-    
-    /* #collapsibleNavbar{
+
+    /* mobile **********************************************************************************************************************************************/
+
+    @media screen and (max-width:767px) {
+
+      /* #collapsibleNavbar{
       position: fixed !important;
       width: 100% !important;
       height: 100% !important;
@@ -218,95 +245,109 @@
       left: 0;
     
       } */
-    
-      #collapsibleNavbar-m{ opacity: 1 !important;}
-      
-      #collapsibleNavbar-m{
-      position: fixed !important;
-      width: 100% !important;
-      height: 100% !important;
-      background-color: white !important; 
-      z-index: 999999999 !important;
-      color: black !important;
-      top:0;
-      left: 0;
+
+      #collapsibleNavbar-m {
+        opacity: 1 !important;
+      }
+
+      #collapsibleNavbar-m {
+        position: fixed !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: white !important;
+        z-index: 999999999 !important;
+        color: black !important;
+        top: 0;
+        left: 0;
+      }
+
+
+      .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+      }
+
+      .active,
+      .accordion:hover {
+        background-color: #ccc;
+      }
+
+      .accordion:after {
+        /* content: '\002B'; */
+        content: '\f054';
+        /* '>' 화살표 아이콘  */
+        font-family: "Font Awesome 7 Free";
+        /* fontawesom 버젼 7 무료 글꼴*/
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+      }
+
+      .active:after {
+        /* content: "\2212"; */
+        content: '\f078';
+        /* bottom 화살표 아이콘  */
+      }
+
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+
+
+
+      .slide {
+        text-align: center !important;
+      }
+
+      .slider-container,
+      .slider,
+      .slider .slide,
+      .slider .slide img {
+        width: 100%;
+        height: 700px !important;
+        border-radius: 10px;
+      }
+
+      .slider-pc {
+        display: none !important;
+      }
+
+      .slider-m {
+        display: block !important;
+      }
+
+      .slide .caption,
+      .slide .more {
+        width: 100%;
+
+      }
+
+      .slide .caption {
+        top: 550px !important;
+      }
+
+      .slide .more {
+        top: 650px !important;
+      }
     }
-
-
-    .accordion {
-      background-color: #eee;
-      color: #444;
-      cursor: pointer;
-      padding: 18px;
-      width: 100%;
-      border: none;
-      text-align: left;
-      outline: none;
-      font-size: 15px;
-      transition: 0.4s;
-    }
-
-    .active, .accordion:hover {
-      background-color: #ccc;
-    }
-
-    .accordion:after {
-      /* content: '\002B'; */
-      content: '\f054'; /* '>' 화살표 아이콘  */
-      font-family: "Font Awesome 7 Free"; /* fontawesom 버젼 7 무료 글꼴*/
-      color: #777;
-      font-weight: bold;
-      float: right;
-      margin-left: 5px;
-    }
-
-    .active:after {
-      /* content: "\2212"; */
-      content:'\f078'; /* bottom 화살표 아이콘  */
-    }
-
-    .panel {
-      padding: 0 18px;
-      background-color: white;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.2s ease-out;
-    }
-
-
-
-    .slide{ text-align: center !important;}
-
-    .slider-container,
-    .slider,
-    .slider .slide,
-    .slider .slide img {
-      width: 100%;
-      height: 700px !important;
-      border-radius: 10px;
-    }
-    
-    .slider-pc{display: none !important;}  
-    .slider-m{display: block !important;}   
-    
-    .slide .caption,
-    .slide .more{      
-      width: 100%;
-      
-    }
-    .slide .caption{     
-      top: 550px !important;
-    }
-    .slide .more{     
-      top: 650px !important;     
-    }
-  }
-
   </style>
 
-   <script>
-    var acc = document.querySelectorAll("#collapsibleNavbar-m .accordion");  
-    $(document).ready(function(){
+  <script>
+    var acc = document.querySelectorAll("#collapsibleNavbar-m .accordion");
+    $(document).ready(function () {
       $('.slider').slick({
         centerMode: true,
         centerPadding: '80px', // 양쪽에 보이는 슬라이드 넓이
@@ -325,6 +366,7 @@
     });
   </script>
 </head>
+
 <body>
   <!-- navigation ------------------------------------------------------------------------------------->
   <nav class="navbar navbar-expand-sm">
@@ -342,14 +384,16 @@
             <a class="nav-link" href="#">Brands</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button">Our Company <i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav-link dropdown-toggle" href="#" role="button">Our Company <i
+                class="fa-solid fa-chevron-right"></i></a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Coca-Cola Company</a></li>
               <li><a class="dropdown-item" href="#">Since 1886</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button">Discover <i class="fa-solid fa-chevron-right"></i></a>
+            <a class="nav-link dropdown-toggle" href="#" role="button">Discover <i
+                class="fa-solid fa-chevron-right"></i></a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Brand Story</a></li>
               <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
@@ -361,68 +405,75 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sustainability</a>
-          </li>          
+          </li>
         </ul>
       </div>
       <!-- 네비게이션 서브메뉴 모바일용 -->
       <div id="collapsibleNavbar-m" class="collapse navbar-collapse">
-        <div><a href="#" id="closeMenu" class="btn" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar-m">&times;</a></div>
+        <div><a href="#" id="closeMenu" class="btn" data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavbar-m">&times;</a></div>
         <button class="accordion">Section 1</button>
         <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
         </div>
 
         <button class="accordion">Section 2</button>
         <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
         </div>
 
         <button class="accordion">Section 3</button>
         <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.</p>
         </div>
 
         <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
+          var acc = document.getElementsByClassName("accordion");
+          var i;
 
-        for (i = 0; i < acc.length; i++) {
-          acc[i].addEventListener("click", function() {
+          for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
 
-          /* accordion 형태로 만들기 */            
-          var panels = document.getElementsByClassName("panel");
-          for (j = 0; j < panels.length; j++){
-            if(acc[j]!== this){
-              acc[j].classList.remove("active");
-            }
-            if (panels[j].style.maxHeight) {
-              
-              if(panels[j]!==this.nextElementSibling){
-                panels[j].style.maxHeight = null;
+              /* accordion 형태로 만들기 */
+              var panels = document.getElementsByClassName("panel");
+              for (j = 0; j < panels.length; j++) {
+                if (acc[j] !== this) {
+                  acc[j].classList.remove("active");
+                }
+                if (panels[j].style.maxHeight) {
+
+                  if (panels[j] !== this.nextElementSibling) {
+                    panels[j].style.maxHeight = null;
+                  }
+                }
               }
-            }
-          } 
 
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.maxHeight) {
-              panel.style.maxHeight = null;
-            } else {
-              panel.style.maxHeight = panel.scrollHeight + "px";
-            } 
-          });
-        }
+              this.classList.toggle("active");
+              var panel = this.nextElementSibling;
+              if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+              } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+              }
+            });
+          }
         </script>
-        
-  </div>
-   
-   
 
-   
+      </div>
+
+
+
+
   </nav>
   <!-- /navigation -->
 
-   
+
   <!-- slider ------------------------------------------------------------------------------------->
   <div class="slider-container">
     <div class="slider">
@@ -436,7 +487,7 @@
         <div class="more">
           <a class="btn btn-primary" href="#">자세히 보기</a>
         </div>
-      
+
       </div>
       <div class="slide">
         <img class="slider-pc" src="img/slider02.webp" alt="신흥시장">
@@ -459,32 +510,28 @@
   <!-- /slider -->
 
 
-  
+
   <!-- 이달의 PICK ----------------------------------------------------------------------------->
-  <div id="pick" class="container">
-    <h1>이달의 PICK</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic01.png" alt="닥터페퍼제로">
-          <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
-          <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
+  <div id="month-pick" class="slider-my-container">
+    <div class="slide col-md-4">
+      <div class="thumbnail">
+        <img src="img/pic01.png" alt="닥터페퍼제로">
+        <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>
+        <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
       </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic02.png" alt="스프라이트제로">
-          <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
-          <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
+    </div>
+    <div class="slide col-md-4">
+      <div class="thumbnail">
+        <img src="img/pic02.png" alt="스프라이트제로">
+        <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>
+        <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
       </div>
-      <div class="col-md-4">
-        <div class="thumbnail">
-          <img src="img/pic03.png" alt="파이웨이드제로">
-          <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
-          <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
-        </div>
-        
+    </div>
+    <div class="slide col-md-4">
+      <div class="thumbnail">
+        <img src="img/pic03.png" alt="파이웨이드제로">
+        <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>
+        <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
       </div>
     </div>
   </div>
@@ -581,15 +628,15 @@
           <ul>
             <li>사이트 맵</li>
             <li>고객 안내</li>
-          </ul>          
-        </div> 
+          </ul>
+        </div>
         <div class="col-md-6">
           <h6>법적고지</h6>
           <ul>
             <li>이용 약관</li>
             <li>쿠키 정책</li>
             <li>쿠키 설정</li>
-          </ul> 
+          </ul>
         </div>
         <div class="col-md-2">
           <i class="fa-brands fa-youtube"></i>
@@ -601,8 +648,9 @@
       <hr style="border: 1px solid white;">
       © 2024 The Coca‑Cola Company. 판권 소유
     </div>
-  </footer> 
+  </footer>
   <!-- /footer -->
-  
+
 </body>
+
 </html>
