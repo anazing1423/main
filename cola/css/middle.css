@@ -1,0 +1,19 @@
+ .middle {
+      height: 224px;
+      box-sizing: border-box;
+      padding: 32px 32px;
+    }
+
+    .mny {
+      position: relative;
+      width: 1056px;
+      height: 158px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mny .btn {
+      position: absolute;
+      width: 332px;
+      height: 36px;
+    }

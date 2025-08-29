@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>한국 코카-콜라</title>
+  <title>펩시하고싶다</title>
   <link rel="icon" href="img/icon.png">
   <!-- 부트스트랩 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +20,21 @@
   <!-- 폰트어썸 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
+  <!-- css링크들 -->
+  <!-- 내비 -->
+  <link rel="stylesheet" href="css/nav.css">
+  <!--슬라이더 css-->
+  <link rel="stylesheet" href="css/slider.css">
+  <!-- 이달의 픽 -->
+  <link rel="stylesheet" href="css/pick.css">
+  <!-- 중간 -->
+  <link rel="stylesheet" href="css/middle.css">
+  <!-- 스토리 -->
+  <link rel="stylesheet" href="css/story.css">
+  <!-- 브랜드 -->
+  <link rel="stylesheet" href="css/brand.css">
+  <!-- 푸터 -->
+   <link rel="stylesheet" href="css/footer.css">
 
   <style>
     * {
@@ -71,407 +85,84 @@
       margin-top: 32px;
     }
 
-    /* 내비게이션 */
-    .navigation {
-      width: 100%;
-      height: 80px;
-      /*좁아지면 72px됨*/
-      position: relative;
-      top: 0;
-      left: 0;
-      box-sizing: border-box;
-      padding: 0 !important;
-      margin: 0 !important;
-      background-color: #fff;
-    }
-
-    .menu {
-      width: 1280px;
-      height: 80px;
-      box-sizing: border-box;
-      padding: 0;
-      margin: 0 auto;
-      position: relative;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
-.menu a {
-  color: #000;
-  text-decoration: none;
-}
-    .nav-logo {
-      box-sizing: border-box;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .nav-logo img {
-      width: 125px;
-      height: auto;
-    }
-
-    .menu-nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-    }
-    .menu-nav ul li{
-      box-sizing: border-box;
-      width: auto;
-      height: 80px;
-      padding: 0 20px;
-      margin: 0 !important;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .dropdown-menu {
-      opacity: 0;
-    }
-
-    .nav-ham {
-      box-sizing: border-box;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 22px;
-      height: 15px;
-      display: none;
-      flex-direction: column;
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin: 28px;
-      gap: 3px;
-      /*좁아지면 보이게*/
-    }
-
-    .nav-ham span {
-      display: block;
-      height: 3px;
-      width: 100%;
-      background-color: black;
-      border-radius: 20px;
-
-    }
 
 
-
-
-
-    /* 여기까지 함 그다음 내비게이션 내 취향에 맞게 설정해야함 */
-    /* .nav-link {
-      color: #000;
-    }
-
-    .nav-item {
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav-item:hover {
-      border-bottom: 2px solid #000;
-    }
-
-    #colapsibleNavbar .dropdown-toggle:hover+.dropdown-menu {
-      display: block;
-    } */
-
-    /* 슬라이더 css */
-    .slider-my-container {
-      width: 1440px !important;
-      height: 589px !important;
-      padding: 0;
-      margin: 0;
-    }
-
-    .slider-pc {
-      display: block !important;
-    }
-
-    .slider-m {
-      display: none !important;
-    }
-
-    .slider-my-container {
-      width: 1250px;
-      max-width: 100%;
-      height: 100%;
-      max-height: 590px;
-      margin: 50px auto;
-      aspect-ratio: 1250 / 590;
-    }
-
-    .slide {
-      position: relative;
-      /* 부모의 position 설정 */
-    }
-
-    .slide .caption,
-    .slide .more {
-      position: absolute;
-      /* 자식 position:absolute 설정. grouping */
-    }
-
-    .slide .caption {
-      left: 5px;
-      top: 200px;
-    }
-
-    .slide .more {
-      left: 5px;
-      top: 300px;
-    }
-
-    .slider .slide {
-      margin: 0 10px;
-      /* 슬라이드 간 간격 */
-    }
-
-    .slider .slide img {
-      aspect-ratio: 1250 / 590;
-      width: 100%;
-      max-height: 590px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
-
-    .slider .slide .btn {
-      background-color: white;
-      color: rgb(0, 0, 0);
-      font-weight: bold;
-      padding-left: 50px;
-      padding-right: 50px;
-      border: none;
-      border-radius: 20px;
-    }
 
     /* 이달의 픽 */
-    #pick {
-      background: none !important;
-      display: grid;
-      place-items: center;
-    }
-
-    #pick .row {
-      display: flex;
-      width: 1120px;
-    }
-
-    .thumbnail {
-      position: relative;
-      border-radius: 20px !important;
-      background-color: white;
-      overflow: hidden;
-      height: 485px;
-
-    }
-
-    .thumbnail img {
-      position: absolute;
-      top: 0;
-      width: 100%;
-      height: 268px;
-    }
-
-    .pickt {
-      position: absolute;
-      height: 216px;
-      bottom: 0;
-      padding: 40px 30px;
-    }
-
-    .pickt a {
-      position: absolute;
-      color: black;
-      text-decoration: underline;
-      bottom: 32px;
-    }
-
-    .pickt a:hover {
-      opacity: 95%;
-      color: black;
-    }
 
     /* 중간에 그거 */
-    .middle {
-      height: 224px;
-      box-sizing: border-box;
-      padding: 32px 32px;
-    }
-
-    .mny {
-      position: relative;
-      width: 1056px;
-      height: 158px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .mny .btn {
-      position: absolute;
-      width: 332px;
-      height: 36px;
-    }
 
     /* 스토리 */
 
-    .story .my-container {
-      background: none !important;
-      margin: 0 auto !important;
-      padding: 0;
-      height: 590px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      margin-top: 120px !important;
-    }
-
-    .my-container .col-md-6 {
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      border-radius: 20px;
-      box-shadow: 1 1 1 #000;
-    }
-
-    .story img {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-    }
-
-    #story1 #coca .col-md-6:nth-child(1) {
-      width: 545px;
-      height: 550px;
-      left: 0;
-      top: 0;
-      z-index: 1;
-      background-color: #ffffff;
-    }
-
-    #story1 #coca .col-md-6:nth-child(2) {
-      width: 640px;
-      height: 510px;
-      right: 0;
-      bottom: 0;
-    }
-
-    #story2 #future .col-md-6:nth-child(1) {
-      width: 545px;
-      height: 550px;
-      right: 0;
-      top: 0;
-      z-index: 1;
-      background-color: #ffffff;
-    }
-
-    #story2 #future .col-md-6:nth-child(2) {
-      width: 640px;
-      height: 510px;
-      left: 0;
-      bottom: 0;
-    }
-
-    .ny {
-      box-sizing: border-box;
-      width: 405px;
-      height: 420px;
-      margin: 65px 70px;
-      position: relative;
-    }
-
-    .ny .btn {
-      position: absolute;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 323px;
-      height: 36px;
-      border: 2px solid #000;
-      border-radius: 20px;
-      left: 0;
-      bottom: 0;
-      margin: 0;
-      padding: 0;
-    }
-
-
     /* 브랜드 */
-    .brand {
-      position: relative;
-      margin: 0 auto;
 
-      margin-top: 120px;
-      width: 738px;
-      height: 650px;
-    }
-
-    .brand h1 {
-      text-align: center;
-    }
-
-    .brand .cube {
-      margin-top: 32px;
-    }
-
-    .brand .row {
-      padding: 0;
-      margin: 0 auto;
-      width: 100%;
-      box-sizing: border-box;
-      gap: 24px;
-    }
-
-    .brand .second {
-      margin-top: 24px;
-    }
-
-    .brand .col-md-4 {
-      width: 230px;
-      height: 230px;
-      background-color: #fff;
-      border-radius: 20px;
-      box-sizing: border-box;
-      padding: 25px;
-      transition: all 0.3s ease;
-    }
-
-    .brand .col-md-4 a {
-      display: flex;
-      width: 180px;
-      height: 180px;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .brand .col-md-4 img {
-
-      width: 100%;
-      height: auto;
-    }
-
-    .brand .btn {
-      display: flex;
-      margin: 0 auto;
-      margin-top: 32px;
-      box-sizing: border-box;
-      width: 330px;
-      height: 40px;
-    }
 
     /* 푸터 */
     footer {
-      position: sticky;
+      position: relative;
       background-color: #000 !important;
-      height: 600px;
+      height: 596px;
       width: 100%;
       margin-top: 120px;
       color: #fff;
+      padding: 0;
+    }
+
+    .foot-con {
+      width: 1200px;
+      height: 596px;
+      margin: 0 auto;
+    }
+
+    .foot-ny {
+      position: relative;
+      box-sizing: border-box;
+      height: 596px;
+      width: 100%;
+      margin: 0 -12px;
+      padding: 120px 0;
+    }
+
+    .foot-ny>img {
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+      margin: 0 16px;
+    }
+
+    .foot-ny>.sapherator {
+      box-sizing: border-box;
+      padding-right: 16px;
+      padding-left: 16px;
+      margin-top: 40px;
+      width: 1120px;
+      height: 1px;
+    }
+
+    .sapherator hr {
+      border: 1px solid #fff;
+    }
+
+    .acs {
+      display: flex;
+      margin: 0 -16px;
+      justify-content: flex-start;
+      width: 864px;
+      height: 176px;
+    }
+
+    .acodian {
+      width: 25%;
+      height: 136px;
+      box-sizing: border-box;
+      padding: 0 16px;
+      margin-top: 40px;
+    }
+
+    .acd-ny {
+      width: 100%;
+      height: 100%;
     }
 
     footer li {
@@ -480,8 +171,17 @@
 
 
     @media screen and (max-width:1199px) {
+      .menu {
+        width: 100%;
+        height: 72px;
+      }
+
+      .menu-nav {
+        display: none;
+      }
+
       .nav-ham {
-        display: flex;
+        display: flex !important;
       }
 
       .slide {
@@ -582,28 +282,36 @@
       <!-- 여기까지 함 -->
       <div class="menu-nav">
         <ul>
-          <li class="1">
+          <li>
             <a class="menu-name" href="#">Brands</a>
           </li>
-          <li class="2">
-            <a class="menu-name" href="#">Our Company</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Coca-Cola Company</a></li>
-              <li><a class="dropdown-item" href="#">Since 1886</a></li>
-            </ul>
+          <li class="has-sub">
+            <div class="menu-name"><a href="#">Our Company</a></div>
+            <span class="subcon"></span>
+
+            <div class="sub-menu">
+              <ul>
+                <li><a class="sub-item fitem" href="#">Coca-Cola Company</a></li>
+                <li><a class="sub-item" href="#">Since 1886</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="3">
-            <a class="menu-name" href="#">Discover</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Brand story</a></li>
-              <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
-              <li><a class="dropdown-item" href="#">Originals</a></li>
-              <li><a class="dropdown-item" href="#">Opener</a></li>
-              <li><a class="dropdown-item" href="#">Creations</a></li>
-              <li><a class="dropdown-item" href="#">CokePLAY App</a></li>
-            </ul>
+          <li class="has-sub">
+            <div class="menu-name"><a href="#">Discover</a></div>
+            <span class="subcon"></span>
+            <div class="sub-menu">
+              <ul>
+                <li><a class="sub-item  fitem" href="#">Brand story</a></li>
+                <li><a class="sub-item" href="#">Coke & Meal</a></li>
+                <li><a class="sub-item" href="#">Originals</a></li>
+                <li><a class="sub-item" href="#">Opener</a></li>
+                <li><a class="sub-item" href="#">Creations</a></li>
+                <li><a class="sub-item" href="#">CokePLAY App</a></li>
+              </ul>
+            </div>
+
           </li>
-          <li class="4">
+          <li>
             <a class="menu-name" href="#">Substainability</a>
           </li>
         </ul>
@@ -766,34 +474,45 @@
   </div>
 
   <!-- footer -->
-  <footer class="container-fluid">
-    <div class="container">
-      <img src="img/footer.svg" alt="logo">
-      <hr style="border: 1px solid white;">
-      <div class="row">
-        <div class="col-md-2">
-          <h6>소개</h6>
-          <ul>
-            <li>기업 소개</li>
-            <li>히스토리</li>
-            <li>채용</li>
-          </ul>
+  <footer>
+    <div class="foot-con">
+      <div class="foot-ny">
+        <img src="img/footer.svg" alt="logo">
+        <div class="sapherator">
+          <hr>
         </div>
-        <div class="col-md-2">
-          <h6>도움이 필요하세요?</h6>
-          <ul>
-            <li>사이트맵</li>
-            <li>고객 안내</li>
-          </ul>
+        <div class="acs">
+          <div class="acodian">
+            <div class="acd-ny">
+              <h6>소개</h6>
+              <ul>
+                <li>기업 소개</li>
+                <li>히스토리</li>
+                <li>채용</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acodian">
+            <div class="acd-ny">
+              <h6>도움이 필요하세요?</h6>
+              <ul>
+                <li>사이트맵</li>
+                <li>고객 안내</li>
+              </ul>
+            </div>
+          </div>
+          <div class="acodian">
+            <div class="acd-ny">
+              <h6>법적고지</h6>
+              <ul>
+                <li>이용 약관</li>
+                <li>쿠키 정책</li>
+                <li>쿠키 설정</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col-md-6">
-          <h6>법적고지</h6>
-          <ul>
-            <li>이용 약관</li>
-            <li>쿠키 정책</li>
-            <li>쿠키 설정</li>
-          </ul>
-        </div>
+
         <div class="col-md-2">
           <i class="fa-brands fa-youtube"></i>
           <i class="fa-brands fa-x-twitter"></i>
@@ -801,8 +520,11 @@
           <i class="fa-brands fa-facebook"></i>
         </div>
       </div>
-      <hr style="border: 1px solid white;">
+      <div class="sapherator">
+        <hr>
+      </div>
       © 2024 The Coca‑Cola Company. 판권 소유
+    </div>
     </div>
 
   </footer>

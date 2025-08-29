@@ -1,0 +1,184 @@
+ /* 내비게이션 */
+    .navigation {
+      width: 100%;
+      height: 80px;
+      /*좁아지면 72px됨*/
+      position: relative;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      padding: 0 !important;
+      margin: 0 !important;
+      background-color: #fff;
+    }
+
+    .menu {
+      width: 1280px;
+      height: 80px;
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      box-sizing: border-box;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      width: 125px;
+      height: auto;
+    }
+
+
+    .menu-nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+    }
+
+    .menu-nav ul li {
+      box-sizing: border-box;
+      width: auto;
+      height: 80px;
+      padding: 0 20px;
+      margin: 0 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .menu-name {
+      height: 80px;
+      display: flex;
+      align-items: center;
+    }
+
+    .has-sub {
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 0 13px;
+      margin: 0;
+      position: relative;
+    }
+
+    .has-sub .menu-name {
+      padding: 0;
+      margin: 0;
+      height: 80px;
+      width: auto;
+    }
+
+    /* 꺽쇠 그거 */
+    .subcon {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-right: 1.8px solid #333;
+      border-bottom: 1.8px solid #333;
+      transform: rotate(-45deg);
+      margin: 0 13px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-nav ul .has-sub:hover .subcon {
+      transform: rotate(45deg);
+    }
+
+    .menu-nav ul li:hover .menu-name {
+      box-shadow: inset 0 -4px 0 0 #000;
+    }
+
+    /* 개씨발드롭다운 */
+    .sub-menu {
+      position: absolute;
+      top: 100%;
+      display: none;
+      position: absolute;
+      left: 0;
+      background-color: #fff;
+      height: auto;
+      padding: 0;
+    }
+
+    .sub-menu>ul {
+      margin: 0;
+      padding: 32px;
+      display: block !important;
+    }
+
+    .sub-menu>ul>li {
+      display: block !important;
+      white-space: nowrap;
+      width: max-content;
+      text-align: left;
+      margin-top: 8px;
+      height: 18px;
+      padding: 0;
+      width: auto;
+    }
+
+    .sub-menu>ul>li a {
+      display: block;
+      /* li 전체 영역 차지 */
+      text-align: left;
+      height: 18px;
+      padding: 0;
+      margin: 0;
+      margin-top: 8px;
+    }
+
+    .fitem {
+      margin-top: 0 !important;
+    }
+
+    .fitem a {
+      margin-top: 0 !important;
+    }
+
+    .menu-nav ul .has-sub:hover .sub-menu {
+      display: block;
+      z-index: 723;
+    }
+
+    .nav-ham {
+      box-sizing: border-box;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 22px;
+      height: 15px;
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 28px;
+      gap: 3px;
+      /*좁아지면 보이게*/
+    }
+
+    .nav-ham span {
+      display: block;
+      height: 3px;
+      width: 100%;
+      background-color: black;
+      border-radius: 20px;
+
+    }
+

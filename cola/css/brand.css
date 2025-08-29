@@ -1,0 +1,61 @@
+  .brand {
+      position: relative;
+      margin: 0 auto;
+
+      margin-top: 120px;
+      width: 738px;
+      height: 650px;
+    }
+
+    .brand h1 {
+      text-align: center;
+    }
+
+    .brand .cube {
+      margin-top: 32px;
+    }
+
+    .brand .row {
+      padding: 0;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+      gap: 24px;
+    }
+
+    .brand .second {
+      margin-top: 24px;
+    }
+
+    .brand .col-md-4 {
+      width: 230px;
+      height: 230px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-sizing: border-box;
+      padding: 25px;
+      transition: all 0.3s ease;
+    }
+
+    .brand .col-md-4 a {
+      display: flex;
+      width: 180px;
+      height: 180px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand .col-md-4 img {
+
+      width: 100%;
+      height: auto;
+    }
+
+    .brand .btn {
+      display: flex;
+      margin: 0 auto;
+      margin-top: 32px;
+      box-sizing: border-box;
+      width: 330px;
+      height: 40px;
+    }

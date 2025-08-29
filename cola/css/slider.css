@@ -1,0 +1,67 @@
+.slider-my-container {
+      width: 1440px !important;
+      height: 589px !important;
+      padding: 0;
+      margin: 0;
+    }
+
+    .slider-pc {
+      display: block !important;
+    }
+
+    .slider-m {
+      display: none !important;
+    }
+
+    .slider-my-container {
+      width: 1250px;
+      max-width: 100%;
+      height: 100%;
+      max-height: 590px;
+      margin: 50px auto;
+      aspect-ratio: 1250 / 590;
+    }
+
+    .slide {
+      position: relative;
+      /* 부모의 position 설정 */
+    }
+
+    .slide .caption,
+    .slide .more {
+      position: absolute;
+      /* 자식 position:absolute 설정. grouping */
+    }
+
+    .slide .caption {
+      left: 5px;
+      top: 200px;
+    }
+
+    .slide .more {
+      left: 5px;
+      top: 300px;
+    }
+
+    .slider .slide {
+      margin: 0 10px;
+      /* 슬라이드 간 간격 */
+    }
+
+    .slider .slide img {
+      aspect-ratio: 1250 / 590;
+      width: 100%;
+      max-height: 590px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .slider .slide .btn {
+      background-color: white;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      padding-left: 50px;
+      padding-right: 50px;
+      border: none;
+      border-radius: 20px;
+    }

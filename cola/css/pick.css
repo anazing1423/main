@@ -1,0 +1,45 @@
+#pick {
+      background: none !important;
+      display: grid;
+      place-items: center;
+    }
+
+    #pick .row {
+      display: flex;
+      width: 1120px;
+    }
+
+    .thumbnail {
+      position: relative;
+      border-radius: 20px !important;
+      background-color: white;
+      overflow: hidden;
+      height: 485px;
+
+    }
+
+    .thumbnail img {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 268px;
+    }
+
+    .pickt {
+      position: absolute;
+      height: 216px;
+      bottom: 0;
+      padding: 40px 30px;
+    }
+
+    .pickt a {
+      position: absolute;
+      color: black;
+      text-decoration: underline;
+      bottom: 32px;
+    }
+
+    .pickt a:hover {
+      opacity: 95%;
+      color: black;
+    }
