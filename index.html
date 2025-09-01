@@ -10,6 +10,7 @@
       text-decoration: none;
       color: rgb(7, 23, 37);
     }
+
     .container {
       box-sizing: border-box;
       position: absolute;
@@ -19,42 +20,70 @@
       display: flex;
       width: 1500px;
       height: 700px;
-      background: linear-gradient(40deg, rgba(0, 0, 255, 0.7), rgba(0, 0, 0, 0.7), rgba(255, 0, 0, 0.7));
+      background: url(wolf.webp) no-repeat center/cover;
       background-color: rgb(60, 60, 60);
       overflow: hidden;
     }
 
+    .glass {
+      background: url(glass.jpg) repeat;
+      opacity: 0.3;
+      filter: blur(2px);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
     .box {
       box-sizing: border-box;
-      position: absolute;
+      position: relative;
       display: flex;
       width: 180px;
-      height: 80px;
-      border: 1px solid whitesmoke;
-      border-radius: 3px;
-      background-color: aliceblue;
+      height: 250px;
+      border-radius: 5px;
+      background-color: rgba(240, 240, 240, 0.2);
       padding: 15px;
+      backdrop-filter: blur(5px);
+      /* 배경만 블러 처리 */
+      -webkit-backdrop-filter: blur(3px);
+      /* 사파리용 */
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+      /* 그림자 */
+      /* 글자 흰색 */
+      text-align: center;
       align-items: center;
       justify-content: center;
+      right: 0; bottom: 0;
+    }
+
+    a {
+      z-index: 2;
+      font-weight: bold;
+      color: #fff;
     }
   </style>
 
 </head>
 
 <body>
-  <h1>hello, world!</h1>
+  <h1>hello, wolF!</h1>
   <div class="container">
-    <div class="box" id="box1"><a href="class/index.html">수업 바로가기</a></div>
-    <div class="box" id="box2"><a href="mer/index.html">주은 바로가기</a></div>
-    <div class="box" id="box3"><a href="portfolio/index.html">포트폴리오 바로가기</a></div>
-    <div class="box" id="box4"><a href="cocacol/index.html">코카콜라 바로가기</a></div>
-
+    <div class="box" id="box1"><a href="class/index.html">수업<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box2"><a href="mer/index.html">주은<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box3"><a href="portfolio/index.html">포트폴리오<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box4"><a href="cocacol/index.html">코카콜라<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box5"><a href="cocacol/index.html">THIS IS<br><strong>WOLF</strong></a><div class="glass"></div></div>
   </div>
 
 
   <script>
-    const box=document.querySelectorAll(".box");
-    const container=document.querySelector(".container")
+    const box = document.querySelectorAll(".box");
+    const container = document.querySelector(".container")
 
     const containerWidth = container.clientWidth;
     const containerHeight = container.clientHeight;
@@ -62,12 +91,12 @@
     box.forEach(box => {
       const randomX = Math.random() * (containerWidth - box.clientWidth)
       const randomY = Math.random() * (containerHeight - box.clientHeight)
-      
 
-    box.style.left = randomX + "px";
-    box.style.top = randomY + "px";
+
+      box.style.left = randomX + "px";
+      box.style.top = randomY + "px";
     });
-    
+
 
   </script>
 </body>

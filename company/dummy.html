@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글로벌아이티</title>
+  <link rel="icon" href="img/favicon.png" sizes="32x32" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    body { padding-top: 70px; }
+    .navbar-default { background-color: rgb(26, 56, 122); }
+    #myCarousel .item { height: 700px; }
+    #myCarousel .item img { width: 100%; height: 100%; object-fit: cover; }
+    #subject { background: #eeeeee; padding: 60px 0; }
+
+    /* 교육과정 박스 - 항상 한 줄 */
+    #subject .row {
+      display: flex;
+      flex-wrap: nowrap; /* 한 줄로 강제 */
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    #subject .thumbnail {
+      flex: 0 0 32%; /* 3개가 한 줄에 들어가도록 폭 고정 */
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      text-align: center;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #subject .thumbnail img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    #subject .thumbnail p,
+    #subject .thumbnail strong {
+      font-size: 12px;
+      margin: 2px 5px;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #subject .thumbnail button {
+      margin-top: auto; /* 항상 하단 */
+      font-size: 12px;
+      padding: 5px 10px;
+      margin-bottom: 5px;
+    }
+
+    footer { background-color: #727272; color: #f5f5f5; padding: 30px; text-align: center; }
+    footer a { color: #f5f5f5; }
+    footer a:hover { color: skyblue; text-decoration: none; }
+  </style>
+
+  <script>
+    $(function(){
+      $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function(){ window.location.hash = hash; });
+        }
+      });
+    });
+  </script>
+</head>
+<body id="myPage">
+
+  <!-- 네비게이션 -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#myPage">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#subject">SUBJECT</a></li>
+          <li><a href="#contact">CONTACT</a></li>          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 캐러셀 -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/img1.jpg" alt="글로벌아이티이미지">
+        <div class="carousel-caption">
+          <h3>고용노동부지정 글로벌아이티인재개발원</h3>
+          <p>5년인증 우수훈련기관!</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="img/img2.jpg" alt="글로벌아이티이미지">
+        <div class="carousel-caption">
+          <h3>생성형AI&LLM 기반 보안 시스템 엔지니어 양성 과정</h3>
+          <p>국비지원 전액무료</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="img/img3.jpg" alt="글로벌아이티이미지">
+        <div class="carousel-caption">
+          <h3>풀스택 프레임워크(자바,스프링)기반</h3>
+          <p>데이터 융합SW개발자 과정</p>
+        </div>
+      </div>
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+
+  <!-- 교육원 소개 -->
+  <div id="about" class="container text-center">
+    <h1>교육원 소개</h1>
+    <p>글로벌 IT 인재개발원은</p>
+    <p>4차 산업혁명의 중심에 있습니다</p> 
+  </div>
+
+  <!-- 교육 과정 -->
+  <div id="subject" class="text-center">
+    <div class="container">
+      <h1>교육과정</h1>
+      <p>K-Digital Training. 국비지원 교육과정</p>   
+      <div class="row">
+        <div class="thumbnail">
+          <img src="img/img1_2.jpg" alt="교육과정이미지">
+          <p><strong>풀스택 프레임워크 기반 데이터 융합SW개발자 과정</strong></p>
+          <p>K-Digital Training</p>
+          <button class="btn btn-primary">more</button>
+        </div>
+        <div class="thumbnail">
+          <img src="img/img2_2.jpg" alt="교육과정이미지">
+          <p><strong>산업프로젝트 기반 인공지능 빅데이터 분석가 과정</strong></p>
+          <p>K-Digital Training</p>
+          <button class="btn btn-primary">more</button>
+        </div>
+        <div class="thumbnail">
+          <img src="img/img3_2.jpg" alt="교육과정이미지">
+          <p><strong>데브옵스 MSA 컨테이너 기반 클라우드 네이티브 엔지니어 과정</strong></p>
+          <p>K-Digital Training</p>
+          <button class="btn btn-primary">more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div id="contact" class="container">
+    <h1 class="text-center">Contact</h1>
+    <div class="row">
+      <div class="col-sm-4">
+        <p><span class="glyphicon glyphicon-map-marker"></span> 서울시 관악구 남부순환로 1820, 에그옐로우14층</p>
+        <p><span class="glyphicon glyphicon-phone"></span> 02-6020-0055</p> 
+      </div>
+      <div class="col-sm-8">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" type="text" name="name" placeholder="name" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" type="email" name="email" placeholder="email" required>
+          </div>
+        </div>
+        <textarea class="form-control" name="comments" placeholder="Comment" rows="5"></textarea><br>
+        <button class="btn btn-primary pull-right">Send</button>
+      </div>
+    </div>
+  </div>
+<!-- 카카오맵 -->
+<div id="kakaomap" style="width: 100%; height: 500px;"></div>
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b8e2e58e8711b4534ee944876ddd4cd6"></script>
+<script>
+  var mapContainer = document.getElementById('kakaomap');
+  var mapOption = { 
+    center: new daum.maps.LatLng(37.4809094, 126.9520957),
+    level: 3 
+  };
+  var map = new daum.maps.Map(mapContainer, mapOption);
+  var markerPosition  = new daum.maps.LatLng(37.4809094, 126.9520957); 
+  var marker = new daum.maps.Marker({ position: markerPosition });
+  marker.setMap(map);
+</script>
+
+  <!-- Footer -->
+  <footer>
+    <a href="#myPage" title="to top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+  </footer>
+
+</body>
+</html>
