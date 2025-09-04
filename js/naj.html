@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    for (; ;) {
+      let Q4kr = Number(prompt("국어점수를 입력하세요"));
+      if (Q4kr === -1 ) {
+       break;
+      }
+      let Q4eng = Number(prompt("영어점수를 입력하세요"));
+      if (Q4eng === -1 ) {
+        break;
+      }
+    
+      let Q4math = Number(prompt("수학점수를 입력하세요"));
+      if (Q4math === -1 ) {
+        break;
+      }
+      
+      let average = (Q4eng + Q4math + Q4kr) / 3
+      console.log(average);
+      alert (`${average}`);
+
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

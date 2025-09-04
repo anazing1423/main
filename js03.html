@@ -71,11 +71,31 @@
     // }
     // document.write('since 1 ${sum}');
 
-for(let j=1; j<=9; j++){
-  for(let i=2; i<=9; i++){
-    document.write(`${i} x ${j} = ${i * j}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`);//이거작은따옴표가아니라 커맨드키엿름;
-  }
-  document.write("<br>"); //i가 한단이니까 i쪽 괄호에 한단이 끝나면 줄 바꾸는거 넣기
+// for(let j=1; j<=9; j++){
+//   for(let i=2; i<=9; i++){
+//     document.write(`${i} x ${j} = ${i * j}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`);//이거작은따옴표가아니라 커맨드키엿름;
+//   }
+//   document.write("<br>"); //i가 한단이니까 i쪽 괄호에 한단이 끝나면 줄 바꾸는거 넣기
+// }
+//scores.length는 배열의 크기. 여기서는 7
+// for(let i=0;1<scores.length;i++){
+//   console.log(score[i]);
+// }
+//배열의 요소(아이템)는 타입이 달라도 됨
+let informations=["홍길동","서울시","010-010-010",20];
+for(let i=0;i<informations.length;i++){
+  console.log(informations[i]);
+}
+//배열의 크기는 확장될 수 있음, 자바는 불가능.
+informations[4]="남자";
+console.log(informations[4]);
+//빈배열요소가없움
+let colors=[];
+colors[0]="red";
+colors[1]="blue";
+colors[2]="green";
+for(let i=0;i<colors.length;i++){
+      console.log(colors[i]);
 }
 
   </script>

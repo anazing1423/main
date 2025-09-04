@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // var seed=3;
+    // for(let i=1;i<=5;i++){
+    //   var seed=5; // seed값 덮어 씀
+    //   var result=seed*i;
+    //   console.log(result);
+    // }
+    // console.log(seed); // 원래 다른 언어는 맨처음에 지정한 전역변수 seed=3으로 나오는데  var님은 지역변수 호이스팅?같은? 거떔에? 지역변수님이 전역이기는 듯!!
+
+    //  let seeed=3;
+    // for(let j=1;j<=5;j++){
+    //   let seeed=5; // seed값못덮어씀개하꼬지역
+    //   let result=seeed*j;
+    //   console.log(result);
+    // }
+    // console.log(seeed); //얘는 let이라 감히 지역따위가 전역할 수 없음
+
+//매개변수?와결과값이 다 있대요
+    function addNumber(num1,num2){
+      let a = num1 - num2;
+      return a;
+    }
+    //
+    let b = addNumber(10,20);
+    console.log(b);
+    //
+    b =addNumber(100,200);
+    console.log(b);
+
+    //오!! 대충 함수는 클래스 같은 존재네요
+
+    function multiple(num3=1,num4=30){
+      let c = num3 * num4;
+      return c;
+    }
+let a = addNumber(2,9);
+let c = multiple();
+    let k = addNumber(5,20)*multiple(); //기본값으로 하고 싶어도 괄호는 넣어야함
+
+
+    //어머니모스 함수(anonymous): 이름 없는 함수라 내가 실핼하는거아님 프로그램이알아서해줌
+    //근데 직접??함수를이용하면내가 쫀뜩하게쓸수잇음
+
+    let ano=function(o,p){
+      return o+p;
+    }
+    document.write([k,a,c,ano(4,9)]);
+
+ //람다람!!! 람다식 함수..화살표를 사용한 깔끔한 함수..얘마저 어머니..
+
+ const hi = function() { //매개변수 없어서 빈괄호
+return alert("hi?");
+ }
+ hi();
+//를 생략해서
+const hello = () => alert("hello?");
+hello();
+//로 가능
+
+const test = (just, this) => {
+
+}
+
+
+  </script>
+</head>
+<body>
+<!-- 
+    // 매개변수와 return값이 모두 있는 함수.
+    function addNumber(num1,num2){
+      let sum = num1 + num2;
+      return sum; 
+    }
+    // 함수 호출. return값이 넘어와서 result에 저장됨
+    let result = addNumber(10,20);
+    console.log(result);  
+    // 함수 재호출.
+    result = addNumber(100,200);
+    console.log(result);
+
+    console.log(addNumber(1000,2000)); // addNumber(1000,2000) 실행 후 return 값(3000)이 호출한 자리로 되돌아 옴.
+
+    // 매개변수에 기본값 사용하기. 매개변수값이 없을 때는 기본값이 사용됨. ES6부터 사용가능.
+    function multiple(a,b=1,c=2){
+      return a*b*c;
+    }
+    console.log(multiple(30)); // a=30, b=1, c=2
+    console.log(multiple(30,20)); // a=30, b=20, c=2
+    console.log(multiple(30,20,10)); // a=30, b=20, c=10 -->
+
+</body>
+</html>
