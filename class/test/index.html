@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 개발 프로그래밍 기술</title>
+  <style>
+    /* 기본 css */
+    #div {
+      display: flex;
+
+    }
+
+    .div {
+      width: 250px;
+      height: 163px;
+      border: 1px solid black;
+      margin-left: 0;
+      margin-right: 17px;
+      margin-top: 17px;
+      padding: 0;
+    }
+
+    .div>h1 {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* 미디어쿼리 */
+    @media screen and (max-width: 768px) {
+      #div {
+        flex-wrap: wrap;
+      }
+
+      .div {
+        flex: 0 0 45%;
+
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      #div {
+        flex-wrap: wrap;
+      }
+
+      .div {
+        flex: 100%;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-------- 문제 1번 ----------->
+  <form>
+    <h1>IT도서등록</h1>
+    <ul style="font-size: 18px;">
+      <li>
+        <label for="title">제목 <input type="text" id="title" name="title"></label>
+
+      </li>
+      <li>
+        <label for="price">가격 </label>
+        <input type="text" id="price" name="price">
+      </li>
+      <li>
+        <label for="publisher">출판사 </label>
+        <input type="text" id="publisher" name="publisher">
+      </li>
+      <li>
+        <input type="radio" id="yes" name="ebook" value="yes" checked>
+        <label for="yes">ebook 제공 </label>
+        <input type="radio" id="no" name="ebook" value="no">
+        <label for="no">ebook 제공 안함 </label>
+      </li>
+      <li>
+        <label for="level">난이도 </label>
+        <select name="level" id="level">
+          <option value="high">상</option>
+          <option value="middle">중</option>
+          <option value="low">하</option>
+        </select>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="category" value="back"> 백엔드 </label>
+        <label>
+          <input type="checkbox" name="category" value="front"> 프론트엔드 </label>
+        <label>
+          <input type="checkbox" name="category" value="programing"> 프로그래밍언어 </label>
+        <label>
+          <input type="checkbox" name="category" value="DB"> 데이터베이스 </label>
+      </li>
+      <li>
+        <label for="picture">사진 </label>
+        <input type="file" id="picture" name="picture" accept="image/*">
+      </li>
+      <li>
+        <label for="info">책설명 </label>
+        <br>
+        <textarea name="info" id="info" rows="6" cols="40"></textarea>
+      </li>
+    </ul>
+    <button type="submit">등록</button>
+    <button type="reset">취소</button>
+  </form>
+
+  <!-------------- 문제 2번 ----------->
+  <div id="div">
+    <div class="div" id="news">
+      <h1>NEWS</h1>
+    </div>
+    <div class="div" id="Event">
+      <h1>Event</h1>
+    </div>
+    <div class="div" id="Shop">
+      <h1>Shop</h1>
+    </div>
+    <div class="div" id="Movie">
+      <h1>Movie</h1>
+    </div>
+  </div>
+
+</body>
+
+</html>
