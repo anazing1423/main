@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+  let a = prompt("숫자를 입력하시오"); // 문자열로 입력됨
+  a = Number(a); // 숫자로 변환
+
+  if (a % 2 === 1) {
+    alert("홀수입니다.");
+  } else if (a % 2 === 0) {
+    alert("짝수입니다.");
+  } else {
+    alert("숫자를 입력하세요.");
+  }
+
+
+
+  let kr = prompt("국어점수");
+  let eng = prompt("영어점수");
+  let math = prompt("수학점수");
+  let d=3
+  kr = Number(kr);
+  eng = Number(eng);
+  math = Number(math);
+  d = Number(d);
+  alert("평균 점수입니다: "+`${(kr+eng+math)/d}`);
+
+
+  for (let i = 1; i <= 101; i++) {
+    document.write(`${i}&nbsp;`);
+    if (i == "49") {
+      document.write("<br>");
+    }
+
+  }
+  document.write("<br>");
+  document.write("<br>");
+  for (let j = 100; j >= 1; --j) {
+    document.write(`${j}&nbsp;`);
+    if (j == "49") {
+      document.write("<br>");
+    }
+  }
+  document.write("<br>");
+  document.write("<br>");
+  for (let gu = 1; gu <= 9; gu++) {
+    for (let dan = 2; dan <= 9; dan++) {
+      document.write(`${dan}x${gu}=${gu * dan}&nbsp;&nbsp;&nbsp;&nbsp;`);
+    }
+    document.write("<br>");
+  }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

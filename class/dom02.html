@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+    <img src="wolf.webp" alt="s" class="img">
+  </div>
+  <script>
+    //onclick은 하나만 적용됨
+  // let img=document.querySelectorAll("img");
+
+  // img.onclick = ()=>alert("SUcK eUm");
+
+  // function aler(){
+  // alert("크엉!!크어어어엉!!!크어어엉!!!!!");
+  //   }
+  // img.onclick = aler;
+  // img.onclick = function(click){
+  //   let x = click.pageX;
+  //   let y = click.pageY;
+  //   console.log(x,y);
+  //   let x2 = click.clientX;
+  //   let y2 = click.clientY;
+  //   console.log(x2,y2);
+  // } 
+       
+
+
+//이건 클릭했을때 함수여러개 할때     
+//let img=document.querySelectorAll("img");
+// //클릭이벤트시 어머니머스 함수사용. 
+//     // img.onclick = ()=>alert("SUcK eUm");
+
+
+//     function aler(){
+// alert("크엉!!크어어어엉!!!크어어엉!!!!!");
+//     }
+
+   
+// img.addEventListener("click", function(click) {
+//   //문서 기준
+//   let x = click.pageX;
+//   let y = click.pageY;
+//   console.log("page;", x,y);
+
+//   //보이는 화면 기준
+//   let x2 = click.clientX;
+//   let y2 = click.clientY;
+//   console.log("client:", x2,y2);
+// });
+//  img.addEventListener("click", aler);
+
+
+  // 모든 img 태그 선택
+  // let imgs = document.querySelectorAll("img");
+
+  // function aler() {
+  //   alert("크엉!!크어어어엉!!!크어어엉!!!!!");
+  // }
+
+  // imgs.forEach(img => {
+  //   img.addEventListener("click", function(click) {
+  //     // 문서 기준 좌표
+  //     let x = click.pageX;
+  //     let y = click.pageY;
+  //     console.log("page:", x, y);
+
+  //     // 보이는 화면 기준 좌표
+  //     let x2 = click.clientX;
+  //     let y2 = click.clientY;
+  //     console.log("client:", x2, y2);
+  //   });
+
+  //   img.addEventListener("click", aler);
+  // });
+
+
+  </script>
+
+  <div>
+    <img src="kitty-1.png" alt="cat" id="cat2">
+  </div>
+  <script>
+    let cat2=document.getElementById("cat2");
+    console.log(cat2);
+    cat2.addEventListener("mouseover",function(){
+      cat2.src="kitty-2.png";
+    });
+    cat2.addEventListener("mouseout",function(){
+      cat2.src="kitty-1.png";
+    });
+    // cat2.addEventListener("mouseover",()=>{
+    //   cat2.src="kitty-2.png";
+    // });
+    // cat2.addEventListener("mouseout",()=>{
+    //   cat2.src="kitty-1.png";
+    // });
+
+
+  </script>
+</body>
+</html>

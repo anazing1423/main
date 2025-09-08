@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let Q1 = prompt("나이를 입력하시오");
+    if (Q1 < 20) {
+      alert("미성년입니다.");
+    }
+    else if (Q1 >= 20) {
+      alert("성년입니다.");
+    }
+
+    let Q2 = prompt("1~5를 입력하시오");
+    switch (Q2) {
+      case "1":
+        alert("도");
+        break;
+      case "2":
+        alert("개");
+        break;
+      case "3":
+        alert("걸");
+        break;
+      case "4":
+        alert("윷");
+        break;
+      case "5":
+        alert("모");
+        break;
+      default: alert("1~5만 입력가능합니다.")
+    }
+
+
+    for (; ;) {
+      let Q34kr = Number(prompt("국어점수를 입력하시오 종료하려면 -1을 입력하시오"));
+      if (Q34kr === -1) {
+        break;
+      }
+      let Q34eng = Number(prompt("영어점수를 입력하시오 종료하려면 -1을 입력하시오"));
+      if (Q34eng === -1) {
+        break;
+      }
+
+      let Q34math = Number(prompt("수학점수를 입력하시오 종료하려면 -1을 입력하시오"));
+      if (Q34math === -1) {
+        break;
+      }
+
+      let average = (Q34eng + Q34math + Q34kr) / 3
+      console.log(average);
+      alert(`${average}`);
+      document.write(`국어점수: ${Q34kr} , 영어점수: ${Q34eng} , 수학점수: ${Q34math} , 평균:${average}`);
+      document.write("<br>");
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

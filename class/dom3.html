@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">크어엉!</button>
+  <button id="btn2">컹!컹!</button>
+  <button id="btn3">끼잉..</button>
+  <button id="btnd">삭제</button>
+  <ul id="item" style="list-style: none;"></ul>
+  <script>
+    let btn=document.getElementById("btn");//버튼 아이디찾기
+    btn.addEventListener("click",function(){
+      let li=document.createElement("li");
+      let text=document.createTextNode("크어엉!");
+      li.appendChild(text);
+      let item=document.getElementById("item");
+      item.appendChild(li);
+    });
+    let btn2=document.getElementById("btn2");//버튼 아이디찾기
+    btn2.addEventListener("click",function(){
+      let li=document.createElement("li");
+      let text2=document.createTextNode("컹!컹!");
+      li.appendChild(text2);
+      let item2=document.getElementById("item");
+      item2.appendChild(li);
+    });
+    let btn3=document.getElementById("btn3");//버튼 아이디찾기
+    btn3.addEventListener("click",function(){
+      let li=document.createElement("li");
+      let text3=document.createTextNode("끼잉..");
+      li.appendChild(text3);
+      let item3=document.getElementById("item");
+      item3.appendChild(li);
+    });
+    
+
+    let btnd=document.getElementById("btnd");
+    btnd.addEventListener("click",function(){
+      let item=document.getElementById("item");
+      item.removeChild(item.lastChild);
+    })
+  </script>
+</body>
+</html>

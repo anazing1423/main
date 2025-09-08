@@ -5,11 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>팝업연습</title>
   <script>
-    WW=window.open("not.html","ang","width=500, height=300, top=500, left=300");
-  if (WW==null){alert("팝업차단됨")};
+    WW=window.open("not.html","ang",500,400);
+  // doc : 팝업창에 띄울 문서 url
+    // win : 팝업창 이름
+    // width : 팝업창 너비
+    // height : 팝업창 높이 
+    function WW(doc,win,width,height){
+      let left=(screen.width/2)-(width/2);
+      let top=(screen.height/2)-(height/2);
+      let newWin=window.open(doc,win,"width="+width+",height="+height+",left="+left+",top="+top);
+      if(newWin==null){
+        alert("팝업이 차단되어 있습니다. 브라우저 팝업 차단을 해제해주세요");
+      }
+    }
+  </script>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
   </script>
 </head>
 <body>
   
+</body>
+</html>
 </body>
 </html>

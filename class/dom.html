@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM연습</title>
+</head>
+<body>
+  <div id="content">
+    DOM
+  </div>
+
+  <div class="content">
+    DOM
+  </div>
+
+  <div class="content">
+    DOM
+  </div>
+<p>nom</p>
+<p>nom</p>
+
+<div id="content3">
+  <ul>
+    <li>dom</li>
+    <li>dom</li>
+    <li>dom</li>
+  </ul>
+</div>
+  <script>
+    // id
+    console.log(document.getElementById('content')); // id가 content인 태그가 로딩된 후 실행해야 함.
+    let div=document.getElementById('content');
+    div.style.color='red'; //글자색
+    div.style.backgroundColor='yellow'; //배경색
+//class
+    console.log(document.getElementsByClassName('content'));
+    let divs=document.getElementsByClassName('content');
+    for(let i=0; i<divs.length; i++){
+      divs[i].style.color='blue';
+      divs[i].style.backgroundColor='green';
+    }
+    //tag
+    console.log(document.getElementsByTagName('p'));
+    let ps=document.getElementsByTagName('p');
+    for(let i=0; i<ps.length; i++){
+      divs[i].style.color='olive';
+      divs[i].style.backgroundColor='skyblue';
+    }
+    //css 선택자 모두 사용가능
+    console.log(document.querySelector('#content3 ul li'));
+    console.log(document.querySelectorAll('#content3 ul li'));
+    //
+    let li=document.querySelectorAll('#content3 ul li');
+    for(let i=0; i<li.length; i++){
+      divs[i].style.color='pink';
+      divs[i].style.backgroundColor='skyblue';
+    }
+
+  </script>
+
+
+  <!-- <div id="content">
+    DOM
+  </div>
+
+  <div class="content">
+    DOM
+  </div>
+
+  <div class="content">
+    DOM
+  </div>
+
+  <p>DOM</p>
+  <p>DOM</p>
+
+  <div id="content2">
+    <ul>
+      <li>DOM1</li>
+      <li>DOM2</li>
+    </ul>
+  </div>
+
+  <script>
+    /* id 찾기 */
+    console.log(document.getElementById('content')); // id가 content인 태그가 로딩된 후 실행해야 함.
+    let div=document.getElementById('content');
+    div.style.color='red'; //글자색
+    div.style.backgroundColor='yellow'; //배경색
+
+    /* class 찾기 */
+    console.log(document.getElementsByClassName('content'));
+    let divs=document.getElementsByClassName('content');
+    for(let i=0; i<divs.length; i++){
+      divs[i].style.color='blue';
+      divs[i].style.backgroundColor='green';
+    }
+
+    /* tag명으로 찾기 */
+    console.log(document.getElementsByTagName('p'));
+    let ps=document.getElementsByTagName('p');
+    for(let i=0; i<ps.length; i++){
+      ps[i].style.color='olive';
+      ps[i].style.backgroundColor='darkred';
+    }
+
+    /* css 선택자 모두(?) 사용가능 */
+    console.log(document.querySelector('#content2 ul li')); // 첫번째 1개만 가져옴
+    console.log(document.querySelectorAll('#content2 ul li'));// 모두 가져옴
+
+    let li=document.querySelectorAll('#content2 ul li');
+    for(let i=0; i<li.length; i++){ 
+      li[i].style.color='green';
+      li[i].style.backgroundColor='red';
+    }
+
+
+  </script> -->
+
+</body>
+</html>

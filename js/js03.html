@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .move {
+      left: 400px;
+    }
+  </style>
+  <script>
+    //yyyy-mm-dd 형식으로 날짜 뽑기
+    let Q1 = new Date();
+    let year = Q1.getFullYear();
+    let month = String(Q1.getMonth() + 1).padStart(2, '0');
+    let day = String(Q1.getDate()).padStart(2, '0');
+
+    document.write("Q1. " + year + "-" + month + "-" + day + "<br>");
+
+    //1~20 난수구하기
+    let Q2 = Math.floor(Math.random() * 20) + 1;
+    document.write("Q2. " + Q2 + "<br>")
+    //버튼먼저출력
+    document.write("Q3. " + "<button id='btn'>구글로 이동</button><br>");
+    //클릭하면 링크로 이동하는 함수
+    let Q3 = document.getElementById("btn");
+    Q3.onclick = function () {
+      location.href = 'https://www.google.com';
+    };
+
+
+    //1,2,3,4,5배열
+    let Q4 = [1, 2, 3, 4, 5];
+    document.write("Q4. " + `${Q4}` + "<br>");
+
+    let Q5 = [6, 7, 8, 9, 10];
+    //배열에 concat써서 더하기
+    Q4 = Q4.concat(Q5);
+    document.write("Q5. " + Q4.join() + "<br>");
+    //csv는 문자열
+    let Q6 = ["이름", "학과", "학년"];
+    let csv = Q6.join();
+    document.write("Q6. " + csv + "<br>");
+    //7번
+    document.write("Q7. " + "instance는 class로 이루어진 객체입니다." + "<br>");
+
+  </script>
+</head>
+
+<body>
+  <label for="Q8"> Q8. 이동<input type="checkbox" id="Q8"></label>
+  <div id="box"
+    style="position: absolute; width: 150px; height: 150px; border: 1px solid black; background-color: azure;">박스</div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      let Q8 = document.getElementById("Q8");
+      let box = document.getElementById("box");
+
+      Q8.addEventListener("change", function(){
+      if (Q8.checked) {
+        box.classList.add("move");
+      } else {
+        box.classList.remove("move");
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>

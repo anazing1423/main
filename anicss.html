@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click",function(){
+        let title = document.getElementById("titl");
+        title.classList.add("animate__animated","animate__bounce");
+      });
+    });
+
+
+    document.addEventListener("scroll", function(){
+      console.log(scrollY);
+      if(window.scrollY > 100){
+        document.getElementById("title").classList.add("animate__animated","animate__fadeInLeft");
+       document.getElementById("content2").style.opacity = "1"; 
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1 class="animate__animated animate__bounce">Hello,world!</h1>
+
+  <button id="btn">
+벝은
+  </button>
+  <h1 id="titl">aniani</h1>
+
+
+
+  <div id="content1" style="height: 400px;"><h1>회사소개</h1></div>
+  <div id="content2" style="height: 500px; opacity: 0;"><h1 id="title">과정소개</h1></div>
+  <div id="content3" style="height: 500px;"><h1>contact</h1></div>
+</body>
+</html>

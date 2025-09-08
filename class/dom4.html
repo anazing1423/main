@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    button {
+      width: 500px;
+      height: 500px;
+    }
+
+    .dis {
+      color: aqua;
+      background-image: url(wolf.webp);
+      object-fit: cover;
+      border: 1px solid black;
+    }
+
+    .en {
+      color: aliceblue;
+      background-image: none;
+      background-color: aquamarine;
+      border: 1px solid black;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const checkbox = document.getElementById("check");   // 변수명 맞춤
+      const proceedButton = document.getElementById("btn");
+
+      // 시작할 때 버튼을 비활성화 상태로 세팅
+      proceedButton.classList.add("dis");
+      proceedButton.disabled = true;
+
+      checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+          proceedButton.classList.add("en");
+          proceedButton.classList.remove("dis");
+          proceedButton.disabled = false;
+        } else {
+          proceedButton.classList.add("dis");
+          proceedButton.classList.remove("en");
+          proceedButton.disabled = true;
+        }
+
+
+
+        //toggle
+      proceedButton.classList.toggle("en", checkbox.check);
+      proceedButton.classList.toggle("dis", !checkbox.check);
+      proceedButton.dis = !this.check;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <input type="checkbox" id="check">체크해봥
+  <div>
+    <button id="btn">
+      힝 ㅜ
+    </button>
+  </div>
+</body>
+
+</html>
