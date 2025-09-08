@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script>
-    document.write(navigator.userAgent); //사용자의 브라우저랑 컴퓨터모바일그거알려줌
-    //현재 페이지는 0, 이전페이지는 -1
-  </script>
+  <title>제출 시간 표시</title>
 </head>
 <body>
-  
+  <h1>IT도서등록</h1>
+
+  <form id="bookForm">
+    <label for="title">제목: </label>
+    <input type="text" id="title" name="title" required><br><br>
+
+    <label for="price">가격: </label>
+    <input type="text" id="price" name="price" required><br><br>
+
+    <button type="submit">등록</button>
+  </form>
+
+  <h2 id="timeDisplay"></h2> <!-- 제출 시간 표시 영역 -->
+
+  <script>
+    const form = document.getElementById('bookForm');
+    const timeDisplay = document.getElementById('timeDisplay');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // 페이지 새로고침 막기
+
+      const now = new Date();
+      const timeStr = now.getFullYear() + '-' +
+                      String(now.getMonth()+1).padStart(2,'0') + '-' +
+                      String(now.getDate()).padStart(2,'0') + ' ' +
+                      String(now.getHours()).padStart(2,'0') + ':' +
+                      String(now.getMinutes()).padStart(2,'0') + ':' +
+                      String(now.getSeconds()).padStart(2,'0') + '.' +
+                      String(now.getMilliseconds()).padStart(3,'0');
+
+      timeDisplay.textContent = `제출 시간: ${timeStr}`;
+    });
+  </script>
 </body>
 </html>
