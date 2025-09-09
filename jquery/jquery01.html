@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      display: block;
+      width: 500px;
+      height: 300px;
+      background-size: cover;       /* 이미지를 요소 크기에 꽉 채움 */
+  background-position: center;  /* 가운데 기준 */
+  background-repeat: no-repeat;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    //문서가 준비 되면 실행
+    $(document).ready(function () {
+
+      // //버튼 클릭하면 실행
+      // $("button").click(function () {
+      //   //p태그안보이게
+      //   $("p").hide();
+      // });
+
+      // //p태그 더블클릭 시 실행
+      // $("p").dblclick(function () {
+      //   //p태그안보이게
+      //   $(this).hide();
+      // });
+
+      // //p태그 마우스 올렸을 시 실행
+      // $("p").mouseenter(function(){
+      //   //p태그안보이게
+      //   $(this).hide();
+      // });
+
+      // //p태그 마우스 나갔을 시 실행
+      // $("p").mouseleave(function(){
+      //   //p태그안보이게
+      //   $(this).hide();
+      // });
+
+      // //p태그 마우스 클릭 할 시 실행
+      // $("p").click(function(){
+      //   //p태그안보이게
+      //   $(this).hide();
+      // });
+
+      // //p태그 마우스 클릭하고 똈을 시 실행
+      // $("p").mouseup(function(){
+      //   //p태그안보이게
+      //   $(this).hide();
+      // });
+
+
+      // //p태그에서 hover시 실행
+      // $("p").hover(
+      //   // mouseenter시
+      //   function () {
+      //     $(this).hide();
+      //   },
+      //   // mouseleave시
+      //   function () {
+      //     $(this).show();
+      //   }
+      // );
+
+      ///////////////////
+      $("input").focus(function () {
+        $(this).css("background-color", "aquamarine");
+      });
+
+      $("input").blur(function () {
+        $(this).css("background-color", "azure");
+      });
+
+
+      $("p").on({
+        mouseenter:function(){
+          $(this).css("background-color","yellow");
+          $(this).css("background-image","");
+          $(this).css("color","red");
+        },
+        mouseleave:function(){
+          $(this).css("color","black");
+          $(this).css("background-image","url('wolf.webp')");
+        }
+      });
+    });
+
+
+  </script>
+</head>
+
+<body>
+  <h1>qq</h1>
+  <p>jqjq</p>
+  <p>jqjq</p>
+  <button id="btn">캬옹켜옹</button>
+  <br><br>
+  <label for="name">이름</label><input type="text" name="name" id="name">
+
+
+
+
+
+
+</body>
+
+</html>

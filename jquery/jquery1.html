@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(document).ready(function () {
+      //1. 웹페이지 배경 녹색
+      $("#Q1").click(function () {
+        $("body").css("background-color", "green");
+      });
+      //2. 이미지 오른쪽 이동
+      $("#Q2").click(function () {
+        $("img").css("transform", "translateX(300px)");
+      });
+      //3. 아코디언 제이쿼리
+      $(".accordion").click(function () {
+        let panel = $(this).next(".panel")
+
+        if (panel.is(":visible")) {
+          panel.stop().slideUp();
+          $(this).css("background-color", "#eee");
+        } else {
+          panel.stop().slideDown();
+          $(this).css("background-color", "#ccc");
+        }
+      });
+      $(".accordion").hover(function () {
+        $(this).css("background-color", "#ccc");
+      },
+        function () {
+          if (!$(this).next(".panel").is(":visible")) {
+            $(this).css("background-color", "#eee");
+          }
+        }
+      );
+
+      //4. 블로그 제이쿼리
+
+      
+    });
+  </script>
+  <style>
+
+    .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: 0.3s;
+    }
+
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="Q1">녹색배경</button>
+  <button id="Q2">오른쪽으로 이동</button>
+  <img style="position: relative;" src="right.jpg" alt="화살표">
+
+  <button class="accordion">1</button>
+  <div class="panel">
+    <p>blabla</p>
+  </div>
+
+  <button class="accordion">2</button>
+  <div class="panel">
+    <p>blabla</p>
+  </div>
+
+  <button class="accordion">3</button>
+  <div class="panel">
+    <p>blabla</p>
+  </div>
+
+</body>
+
+</html>
