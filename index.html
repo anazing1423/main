@@ -1,28 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
+  <title>랜덤 박스</title>
   <style>
-    a {
-      text-decoration: none;
-      color: rgb(7, 23, 37);
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
     }
 
     .container {
-      box-sizing: border-box;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: 50px;
-      display: flex;
+      position: relative; /* 박스 기준 */
       width: 1500px;
       height: 700px;
+      margin: 50px auto;
       background: url(wolf.webp) no-repeat center/cover;
-      background-color: rgb(60, 60, 60);
       overflow: hidden;
+      padding: 15px; /* JS 계산에 반영 */
+      box-sizing: border-box;
     }
 
     .glass {
@@ -40,65 +37,61 @@
     }
 
     .box {
-      box-sizing: border-box;
-      position: relative;
-      display: flex;
+      position: absolute; /* 컨테이너 기준 */
       width: 180px;
       height: 250px;
+      background-color: rgba(240,240,240,0.2);
       border-radius: 5px;
-      background-color: rgba(240, 240, 240, 0.2);
       padding: 15px;
-      backdrop-filter: blur(5px);
-      /* 배경만 블러 처리 */
-      -webkit-backdrop-filter: blur(3px);
-      /* 사파리용 */
-      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-      /* 그림자 */
-      /* 글자 흰색 */
       text-align: center;
+      display: flex;
       align-items: center;
       justify-content: center;
-      right: 0; bottom: 0;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(3px);
+      box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+      z-index: 2;
     }
 
-    a {
-      z-index: 2;
-      font-weight: bold;
+    .box a {
       color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 3;
     }
   </style>
-
 </head>
-
 <body>
-  <h1>hello, wolF!</h1>
-  <div class="container">
+  <h1 style="text-align:center;">hello, wolF!</h1>
+  <div class="container" id="container">
     <div class="box" id="box1"><a href="class/index.html">수업<br>바로가기</a><div class="glass"></div></div>
-    <div class="box" id="box2"><a href="mer/index.html">주은<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box2"><a href="wolf.webp">thIsIS<br><strong>WOLF</strong></a><div class="glass"></div></div>
     <div class="box" id="box3"><a href="portfolio/index.html">포트폴리오<br>바로가기</a><div class="glass"></div></div>
     <div class="box" id="box4"><a href="cocacol/index.html">코카콜라<br>바로가기</a><div class="glass"></div></div>
     <div class="box" id="box5"><a href="machine.html">계산기<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box6"><a href="machine.html">계산기<br>바로가기</a><div class="glass"></div></div>
+    <div class="box" id="box7"><a href="machine.html">계산기<br>바로가기</a><div class="glass"></div></div>
   </div>
 
-
   <script>
-    const box = document.querySelectorAll(".box");
-    const container = document.querySelector(".container")
+    const container = document.getElementById("container");
+    const boxes = document.querySelectorAll(".box");
 
+    // 컨테이너 실제 너비/높이 (패딩 고려)
     const containerWidth = container.clientWidth;
     const containerHeight = container.clientHeight;
 
-    box.forEach(box => {
-      const randomX = Math.random() * (containerWidth - box.clientWidth)
-      const randomY = Math.random() * (containerHeight - box.clientHeight)
+    boxes.forEach(box => {
+      // 박스가 컨테이너 안에만 랜덤 위치하도록 계산
+      const maxX = containerWidth - box.offsetWidth;
+      const maxY = containerHeight - box.offsetHeight;
 
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
 
       box.style.left = randomX + "px";
       box.style.top = randomY + "px";
     });
-
-
   </script>
 </body>
-
 </html>
