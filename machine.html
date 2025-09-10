@@ -20,13 +20,14 @@
       position: relative;
       top: 200px;
       left: 35%;
-      border: 5px solid rgb(92, 56, 12);
+      box-shadow: 0 0 0 5px rgb(92, 56, 12);
+    border-radius: 10px;
       width: 430px;
       height: 505px;
       box-sizing: border-box;
       padding: 15px;
       border-radius: 28px;
-      background-color: rgb(255, 253, 250);
+      background-color: #f2e9d5;
       transform: scale(1.5);
     }
 
@@ -36,7 +37,8 @@
       margin: 0 auto;
     }
 
-    label {
+    button {
+      margin: 0 auto;
       display: block;
       width: 90px;
       height: 60px;
@@ -46,24 +48,24 @@
       line-height: 60px;
       font-size: 20px;
       color: rgb(92, 56, 12);
-      background-color: rgb(250, 232, 204);
+      background-color: #8CA672;
     }
 
-    label::selection {
+    button::selection {
       background-color: none;
       color: rgb(92, 56, 12);
     }
 
     .calculation {
-      background-color: rgb(165, 103, 61);
+      background-color: #BF6B63;
     }
 
     #value {
       position: relative;
-      width: 390px;
+      width: 400px;
       height: 120px;
       border-radius: 20px;
-      background-color: rgb(250, 232, 204);
+      background-color: rgb(255, 250, 241);
       text-align: right;
       font-size: 30px;
       margin-bottom: 10px;
@@ -105,7 +107,7 @@
       display: inline-block;
       text-align: right;
       font-size: 18px;
-      color: rgba(92, 56, 12, 0.699);
+      color: #686D8C;
     }
   </style>
 </head>
@@ -119,33 +121,33 @@
       <input type="text" id="typing" class="value">
     </div>
     <div id="numpad">
-      <div><label for="typing" class="calculation" id="reset">AC</label></div>
-      <div><label for="typing" class="calculation" id="open">&lpar;</label></div>
-      <div><label for="typing" class="calculation" id="close">&rpar;</label></div>
-      <div><label for="typing" class="calculation" id="percent">&percnt;</label></div>
-      <div><label for="typing" class="num" data-value="7">7</label></div>
-      <div><label for="typing" class="num" data-value="8">8</label></div>
-      <div><label for="typing" class="num" data-value="9">9</label></div>
-      <div><label for="typing" class="calculation" id="plus">+</label></div>
-      <div><label for="typing" class="num" data-value="4">4</label></div>
-      <div><label for="typing" class="num" data-value="5">5</label></div>
-      <div><label for="typing" class="num" data-value="6">6</label></div>
-      <div><label for="typing" class="calculation" id="minus">-</label></div>
-      <div><label for="typing" class="num" data-value="1">1</label></div>
-      <div><label for="typing" class="num" data-value="2">2</label></div>
-      <div><label for="typing" class="num" data-value="3">3</label></div>
-      <div><label for="typing" class="calculation" id="*">&times;</label></div>
-      <div><label for="typing" class="num" data-value=".">.</label></div>
-      <div><label for="typing" class="num" data-value="0">0</label></div>
-      <div><label for="typing" class="calculation" id="equal">&equals;</label></div>
-      <div><label for="typing" class="calculation" id="divid">&divide;</label></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="reset">AC</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="open">&lpar;</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="close">&rpar;</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="percent">&percnt;</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="7">7</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="8">8</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="9">9</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="plus">+</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="4">4</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="5">5</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="6">6</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="minus">-</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="1">1</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="2">2</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="3">3</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="*">&times;</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value=".">.</button></div>
+      <div><button type="button" tabindex="-1" class="num" data-value="0">0</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="equal">&equals;</button></div>
+      <div><button type="button" tabindex="-1" class="calculation" id="divid">&divide;</button></div>
     </div>
   </div>
 
   <script>
     $(document).ready(function () {
       //enter키 이벤트 수정
-      $("#typing").keydown(function (e) {
+      $(document).keydown(function (e) {
         if (e.key === "Enter") {  // Enter 키 감지
           e.preventDefault(); // 기본 동작 막기
           $("#equal").click(); // = 버튼 클릭 이벤트 그대로 실행
@@ -155,7 +157,6 @@
       //계산 결과
       $("#equal").click(function () {
         let expression = $("#typing").val();
-
         // 숫자 뒤에 괄호가 나오면 *로 바꿔주기
         expression = expression.replace(/(\d)\(/g, "$1*(");
         expression = expression.replace(/×/g, "*").replace(/÷/g, "/");
@@ -163,24 +164,37 @@
         try {
           let result = eval(expression);
           $("#result").text(result);
-          $("#typing").val("");
+          $("#typing").css("color","#B43D3F");
+          $("#typing").val(result);
         } catch (e) {
           alert("수식을 입력해주세요");
         }
+        $("#typing").blur(); // 키보드 닫기
       });
-
+      
       //숫자 입력
       $(".num").click(function () {
         let value = $(this).data("value");//내가 누른 버튼의 data-value값이 value함수의 값이 되게 세팅
+        $("#typing").css("color","rgb(92, 56, 12)");
         $("#typing").val($("#typing").val() + value);
+        $("#typing").blur(); // 키보드 닫기
+        this.blur();
+
+
+        // let result = $("#result").text("");
+        // if(result !== "") {
+        //   $("#typing").val("");
+        // }
       });
+      
       //연산자 입력
       $(".calculation").not("#reset,#equal").click(function () {
         //곱하기랑 나누기는 텍스트로 넣으면 자바스크립트가 계산못해서 함수로 값 바꿔놔야함
         let displayOperator = $(this).text();
         let currentVal = $("#typing").val();
         let lastResult = $("#result").text();
-
+        
+        $("#typing").css("color","rgb(92, 56, 12)");
         if (currentVal === "" && lastResult !== "") {
           $("#typing").val(lastResult + displayOperator); // 이전 결과 뒤에 연산자
         } else if (currentVal === "" && lastResult === "") {
@@ -188,12 +202,17 @@
         } else {
           $("#typing").val(currentVal + displayOperator);
         }
+        $("#typing").blur(); // 키보드 닫기
+        this.blur();
       });
-
+      
       //전체취소
       $("#reset").click(function () {
+        $("#typing").css("color","rgb(92, 56, 12)");
         $("#typing").val("");
         $("#result").text("");
+        $("#typing").blur(); // 키보드 닫기
+        this.blur();
       });
 
 

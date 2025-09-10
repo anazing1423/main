@@ -8,6 +8,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <style>
+    img {
+      object-fit: cover;
+    }
+
     .animation-canvas {
       width: 600px;
       height: 400px;
@@ -33,11 +37,13 @@
       left: 270px;
       overflow: hidden;
       color: white;
+
     }
 
     .dot {
       font-size: 20px;
       cursor: pointer;
+      text-shadow: 1px 1px 1px black;
     }
 
     /* 화살표 버튼 스타일 */
@@ -56,8 +62,8 @@
 
     }
 
-    .arrowbg:hover>.arrow{
-     border: 1px;
+    .arrowbg:hover>.arrow {
+      border: 1px;
     }
 
     .arrow.left {
@@ -77,6 +83,7 @@
       background: linear-gradient(to left, rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0));
       right: 0;
     }
+
     .arrowbg.left {
       position: absolute;
       cursor: pointer;
@@ -87,47 +94,23 @@
       left: 0;
     }
   </style>
-
-  <script>
-    $(document).ready(function () {
-      let currentIndex =$("img").index();
-      
-      //슬라이더를 움직이게 하는 함수
-      function moveSlider(index) {
-        let willMoveLeft = -(index * 600); // 왼쪽으로 index*600만큼 이동
-        $('.slider-panel').animate({ left: willMoveLeft }, 'slow');
-        if (currentIndex < 0) {index = 0};
-      }
-      // indicator클릭시 실행
-      $('.dot').click(function () {
-        console.log($(this).index());
-        moveSlider($(this).index()); //이건 클릭 이벤트가 발생한 dot의 인덱스를 반환
-      });
-
-      $('.arrowbg.left').click(function(){
-        moveSlider(currentIndex - 1);
-      });
-      // 화살표 동작은 나중에 추가
-      
-    });
-  </script>
 </head>
 
 <body>
   <div class="animation-canvas">
     <div class="slider-panel">
-      <img src="wolf.webp" alt="pic1" class="slider-image">
-      <img src="wolf.webp" alt="pic2" class="slider-image">
-      <img src="wolf.webp" alt="pic3" class="slider-image">
-      <img src="wolf.webp" alt="pic4" class="slider-image">
-      <img src="wolf.webp" alt="pic5" class="slider-image">
+      <img src="images.png" alt="pic1" class="slider-image">
+      <img src="2.webp" alt="pic2" class="slider-image">
+      <img src="3.jpg" alt="pic3" class="slider-image">
+      <img src="4.jpg" alt="pic4" class="slider-image">
+      <img src="5.png" alt="pic5" class="slider-image">
     </div>
 
     <!-- 좌우 화살표 -->
-    <div class="arrowbg left">
+    <div class="arrowbg left" id="al">
       <div class="arrow left">&#10094;</div>
     </div>
-    <div class="arrowbg right">
+    <div class="arrowbg right" id="ar">
       <div class="arrow right">&#10095;</div>
     </div>
 
@@ -140,6 +123,37 @@
       <span class="dot">*</span>
     </div>
   </div>
+
+  <script>
+    $(document).ready(function () {
+      let currentIndex = 0; // 현재 보이는 슬라이드 인덱스
+      const totalSlides = $('.slider-image').length;
+
+      function moveSlider(index) {
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+
+        let willMoveLeft = -(index * 600);
+        $('.slider-panel').stop(true, true).animate({ left: willMoveLeft }, 'slow');
+
+        currentIndex = index; // 현재 인덱스 업데이트
+      }
+
+      // 인디케이터 클릭
+      $('.dot').click(function () {
+        let index = $(this).index();
+        moveSlider(index);
+      });
+
+      // 좌/우 화살표 클릭
+      $('#al').click(function () {
+        moveSlider(currentIndex - 1);
+      });
+      $('#ar').click(function () {
+        moveSlider(currentIndex + 1);
+      });
+    });
+  </script>
 </body>
 
 </html>
