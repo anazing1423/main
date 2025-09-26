@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="title">javascript</h1>
+
+  <script>
+    let title = document.querySelector("#title")
+
+    title.addEventListener("mouseover", function(){
+         title.textContent = "자바스크립트";
+    });
+    title.addEventListener("mouseout", function() {
+      title.textContent = "javascript";
+    });
+  </script>
+</body>
+</html>

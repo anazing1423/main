@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>기상청 ASOS API 예제</title>
+</head>
+<body>
+  <h1>기상청 시간별 날씨 데이터</h1>
+  <pre id="result">데이터 불러오는 중...</pre>
+
+  <script>
+    async function getAsosHourlyData() {
+      const serviceKey = "e02639a61a5979ec1b83050bba7e4f73f36b5bf36ce389ec777cfbee524993fe"; // 🔑 발급받은 인증키 넣기
+      const url = `http://apis.data.go.kr/1360000/AsosHourlyInfoService`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+
+        // 화면에 보기 좋게 출력
+        document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        console.error("API 호출 에러:", error);
+        document.getElementById("result").textContent = "데이터 불러오기 실패!";
+      }
+    }
+
+    getAsosHourlyData();
+  </script>
+
+  <pre id="out">로딩중...</pre>
+  <script>
+    async function fetchASOS(paramsObj) {
+      const base = 'http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList';
+      const params = new URLSearchParams(paramsObj);
+      const url = `${base}?${params.toString()}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json(); // JSON 지정했을 때
+    }
+
+    (async () => {
+      try {
+        const serviceKey = 'YOUR_SERVICE_KEY'; // <-- 너의 키로 교체
+        const q = {
+          ServiceKey: serviceKey,
+          dataCd: 'ASOS',
+          dateCd: 'HR',
+          startDt: '20250912',
+          startHh: '00',
+          endDt: '20250912',
+          endHh: '23',
+          stnIds: '108',
+          dataType: 'JSON',
+          pageNo: '1',
+          numOfRows: '100'
+        };
+        const data = await fetchASOS(q);
+
+        // 안전하게 파싱
+        const items = data?.response?.body?.items?.item;
+        const arr = Array.isArray(items) ? items : (items ? [items] : []);
+        document.getElementById('out').textContent =
+          arr.map(i => `${i.tm} | ${i.stnNm} | ${i.ta} °C | ${i.hm} % | ${i.ws} m/s | ${i.rn} mm`).join('\n') ||
+          '데이터 없음';
+      } catch (e) {
+        document.getElementById('out').textContent = '에러: ' + e.message;
+        console.error(e);
+      }
+    })();
+  </script>
+</body>
+</html>
+

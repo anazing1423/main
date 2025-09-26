@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+</head>
+
+<body>
+  <div id="boxbox"></div>
+</body>
+<script>
+    $.ajax({
+      url: "member.json",
+      dataType: "json",
+      success: function (data) {
+        let a = "";
+        for (let b = 0; b < data.length; b++) {
+          a += data[b].name + "," + data[b].age + "," + data[b].tel + "<br>";
+        }
+        $("#boxbox").html(a); // ✅ text() → html()로 변경
+      }
+    });
+  </script>
+</html>
